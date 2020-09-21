@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml2.3</title>
+    <style>
+		body{
+		
+			margin:0;
+		}
+    	#box1 {
+			text-align: center;
+			font-family: trebuchet ms;
+			background-color: #b2d6d1; 
+			padding: 5%;
+			font-size: 14pt;
+        }
+        #box2 {
+			background-color: rgb(245,245,245);
+			padding: 2%;
+			border-top-left-radius: 3px; 
+			border-top-right-radius: 3px;  
+		}
+        form{
+			height: 100%;
+        }
+        .left {
+			text-align: right;
+        }
+        .right {
+			text-align: left;
+        }    
+		td {
+            vertical-align: top;
+            width: 50%;
+            padding: 2%;
+        }
+        input[type="radio"], input[type="checkbox"] {
+			margin-bottom: 3%;
+        }
+        input[form="text"], input[form="Email"], input[form="number"] {
+			padding: 1%;
+			padding-right: 10%;
+			width: 60%;
+        }
+        input {
+			font-size: 11pt;
+        }
+
+        select {
+			font-size: 11pt;
+			padding: 1%;
+			width: 48%;
+			background-color:rgb(230,230,230);
+        }
+		table {
+			margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <h1>Survey Form</h1>
+        <div id="box2">
+            <p>Let us know how we can improve freeCodeCamp</p>
+            <form>
+                <table>
+                    <tr>
+                        <td class="left">
+                        	<a>* Name:</a>
+                        </td>
+                        <td class="right">
+                        	<input form="text" class="right" placeholder="Enter your name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                        	<a>* Email:</a>
+                        </td>
+                        <td class="right" >
+                        	<input form="Email" placeholder="Enter your Email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                        	<a>* Age:</a>
+                        </td>
+                        <td input class="right" >
+                        	<input form="number" placeholder="Age">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                        	<a>Which option describes your current role?</a>
+                        </td>
+                        <td class="right" >
+                        	<select name="role" id="role">
+                            	<option value="Option 1">
+                                	<a>Student</a>
+                                </option>  
+                                <option value="Option 2">
+                                	<a>Option 2</a>
+                                </option> 
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                            <a>* How likley is that you would recommend</a>
+                            <br>
+                            <a>freeCodeCamp to a friend?</a>
+                        </td>
+                        <td class="right"> 
+                        	<input type="radio" name="radio1">
+                            <a>Definitely</a>
+                            <br>
+                            <input type="radio" name="radio2">
+                            <a>Maybe</a>
+                            <br>
+                            <input type="radio" name="radio3">
+                            <a>Not sure</a>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                        	<a>What do you like most in FCC:</a>
+                        </td>
+                        <td class="right">
+                        	<select name="option" id="option">
+                            	<option value="Option 1">
+                            		<a>Select an option</a>
+                            	</option>
+                                <option value="Option 2">
+                                	<a>Option 2</a>
+                                </option>
+                            </select></td>
+                    </tr>
+
+                    <tr>
+                        <td class="left">
+                        	<a>Things that schould be improved in the future</a>
+                            <br>
+                            <a>(Check all that apply)</a>
+                        </td>
+                        <td class="right" >
+                        	<input type="checkbox" name="check"> 
+                            <a>Front-end Projects </a>
+                            <br>
+                            <input type="checkbox" name="check"> 
+                            <a>Back-end Projects </a>
+                            <br>
+                            <input type="checkbox" name="check"> 
+                            <a>Data Visualization </a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
