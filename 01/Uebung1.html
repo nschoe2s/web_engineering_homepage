@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="../layout.css">		
 	</head>
 	<body>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<a id="back-to-top"></a>
 		<!-- Kopfzeile -->
 		<div id="header">
 			<table width="100%">
@@ -26,6 +28,11 @@
 				<li><a href="../index.html"><b>Home</b></a></li>
 				<!-- Übung 1 -->
 				<li><a href="Uebung1.html"><b>Übung 1</b></a>
+					<ul>
+						<li><a href="Uebung1.html#1.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="Uebung1.html#1.2"><b>Aufgabe 2</b></a></li>
+						<li><a href="Uebung1.html#1.3"><b>Aufgabe 3</b></a></li>
+					</ul>
 				</li>
 				<!-- Übung 2 -->
 				<li><a href="../02/Uebung2.html"><b>Übung 2</b></a>
@@ -81,12 +88,123 @@
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">			
-		</div>
+		<div id="content">	
+		<!-- Einführung in das Thema -->
+			<h2><b>1. Einführung</b></h2>
+				<div id="unteruebung">
+				<a><b>Inhalt:</b></a>
+				<div id="antwort">
+				<a class="href" href="Vorlesung1.pdf">Vorlesung 1</a>
+				</div>
+				<a><b>Literatur, Tutorials und Kurse:</b></a>				
+				<div id="antwort">
+				<ul>
+					<li><a class="href" href="https://link.springer.com/book/10.1007/978-3-319-90008-7">Aiello, M. (2018)</a><a>: The Web Was Done by Amateurs, A Reflection on One of the Largest Collective Systems Ever Engineered, Springer. (in der DigiBib der Hochschule Bonn-Rhein-Sieg kostenlos verfügbar)</a></li>
+					<li><a>eine grundlegende Einführung mit Videos und Quiz von André Kless unter </a><a class="href" href="https://akless.github.io/akless/we/index.html">WWW Tutorials von André Kless</a></li>
+					<li><a class="href" href="https://www.w3schools.com/">w3schools.com</a></li>
+					<li><a>Mit Mozilla </a><a class="href" href="https://foundation.mozilla.org/en/artifacts/thimble/">Thimble</a><a> steht Ihnen ein erklärender HTML-Editor zur Verfügung, der Sie beim HTML-Einstieg unterstützt.</a></li>
+				</ul>
+				</div>
+				<a><b>Mögliche Klausuraufgaben:</b></a>	
+				
+				<ul>
+					<li><a>Wer gilt als Erfinder des World Wide Web (WWW)?</a></li>
+					<li><a>Aus welchem Jahr stammt die "Geburtsurkunde" des WWW?</a></li>
+					<li><a>Wie hieß der urspüngliche Titel des Proposals des Erfinders, aus dem das WWW hervor gegangen ist?</a></li>
+					<li><a>Auf welcher Maschine wurde der erste WWW-Prototyp entwickelt?</a></li>
+					<li><a>Was war der eigentliche Auftrag des Vorgesetzten an den Erfinder des WWW, der zum ersten WWW-Prototypen führte?</a></li>
+				</ul>
+				<br>
+			</div>
+			<br>			
+			<!-- Übung 1.1 -->	
+			<div id="uebungsueberschrift">	
+				<a><b><span id="1.1">1.1 Das Internet und das World-Wide Web (WWW)</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a>Schauen Sie sich das folgende Video an, um einen Eindruck von den Anfangstagen des WWW zu bekommen.</a>
+					<iframe width="704" height="396" src="https://www.youtube.com/embed/0XQOLzkuqvw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					<br><br>
+					<a><b>Lesen Sie</b></a> 
+					<a class="href" href="https://link.springer.com/chapter/10.1007/978-3-319-90008-7_1"><b>das Kapitel "The Web Was Done by Amateurs"</b></a> 
+					<a><b>in dem Buch</b></a> 
+					<a class="href" href="https://link.springer.com/book/10.1007/978-3-319-90008-7"><b>Aiello, M. (2018): The Web Was Done by Amateurs, A Reflection on One of the Largest Collective Systems Ever Engineered</b></a>
+					<a><b>, pp. 1-6 und ergänzen Sie im <b>Etherpad</b> die Begriffe, Definitionen und Aussagen, die Sie für besonders wichtig halten. </b></a>
+					<div id="antwort">
+					<a class="href" href="https://lea.hochschule-bonn-rhein-sieg.de/ilias.php?ref_id=642445&cmd=showContent&cmdClass=ilobjetherpadlitegui&cmdNode=nt:lj&baseClass=ilObjPluginDispatchGUI">The Web Was Done by Amateurs</a>
+					<br>
+					<a><Exzerpte aus dem ersten Kapitel im gleichnamigen Buch von Marco Aiello</a>
+					</div>
+				</div>
+			<br>
+			<br>
+			<!-- Übung 1.2 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="1.2">1.2 HTTP</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Lesen Sie die beiden Artikel durch:</b></a>
+					<br>
+						<ul>						
+							<li><a class="href" href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol"><b>Hypertext Transfer Protocol (HTTP)</b></a></li>						
+							<li><a class="href" href="https://de.wikipedia.org/wiki/HTTP-Statuscode"><b>HTTP-Statuscodes</b></a></li>
+						</ul>
+						<br>
+				</div>
+			<br>
+			<!-- Übung 1.3 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="1.3">1.3 Grundlegende Einführung in HTML für Anfänger</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Wer sich noch nie mit dem WWW beschäftigt hat, findet sehr grundlegende Einührungen auf Anfänngerniveau unter folgenden Hyperlinks:</b></a>
+					<br>
+						<ul>						
+							<li><a><b>Eine Schritt-für-Schritt-Einführung in HTML von </b></a><a class="href" href="https://www.w3schools.com/html/default.asp"><b>W3 Schools</b></a></li>						
+							<li><a class="href" href="https://wiki.selfhtml.org/wiki/HTML/Tutorials/HTML-Einstieg"><b>selfhtml HTML Einstieg</b></a></li>
+							<li><a><b>Eine grundlegende Einführung mit Videos und Quiz von André Kless unter </b></a><a class="href" href="https://akless.github.io/akless/we/index.html"><b>WWW-Tutorials von André Kless</b></a></li>
+						</ul>
+						<br>
+						<a><b>Wählen Sie eines der Tutorials gemäß Ihres eigenen Niveaus und arbeiten Sie dieses Schritt für Schritt durch.</b></a>
+						<br>
+						<a><b>Zum Editieren von HTML-Quelltext reicht ein Browser.</b></a>
+						<br><br>
+						<iframe width="704" height="396" src="https://www.youtube.com/embed/7bRMmKqVoWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<br><br>
+				</div>
+			<br>
 		</td>
 		<td WIDTH="20%">
 		</td>
 		</tr>
 		</table>
+		<!-- Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden Code von folgender Internetseite:-->
+		<!-- https://blog.kulturbanause.de/2012/04/back-to-top-button-mit-jquery/ -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				// Der Button wird mit JavaScript erzeugt und vor dem Ende des body eingebunden.
+				var back_to_top_button = ['<a href="#top" class="back-to-top"></a>'].join("");
+				$("body").append(back_to_top_button)
+				// Der Button wird ausgeblendet
+				$(".back-to-top").hide();
+				// Funktion für das Scroll-Verhalten
+				$(function () {
+					$(window).scroll(function () {
+						if ($(this).scrollTop() > 100) { // Wenn 100 Pixel gescrolled wurde
+							$('.back-to-top').fadeIn();
+						} else {
+							$('.back-to-top').fadeOut();
+						}
+					});
+					$('.back-to-top').click(function () { // Klick auf den Button
+						$('body,html').animate({
+							scrollTop: 0
+						}, 800);
+						return false;
+					});
+				});
+			});
+			<!-- Hier endet der kopierte Code-->
+		</script>
     </body>
 </html>
