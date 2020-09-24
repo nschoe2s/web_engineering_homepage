@@ -144,6 +144,10 @@ h2{
 	padding:5px;
 	border: 3px solid rgb(164,200,165);
 }
+mark{
+	background-color:rgb(164,200,165,0.5);
+}
+		
 /* Nach-Obej-Scroll-Button */
 /* Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden CSS Code von folgender Internetseite:*/	
 /* https://www.templatemonster.com/blog/de/wie-erstelle-ich-einen-nach-oben-button-mit-css-und-jquery/#:~:text=Ein%22Nach%20oben%22%2DButton,zur%C3%BCck%20zum%20Anfang%20der%20Seite.*/
@@ -179,4 +183,4 @@ h2{
 	line-height: 50px;
 	color: #fff;
 }
-/* Hier endet der kopierte Code */	
+/* Hier endet der kopierte Code */			

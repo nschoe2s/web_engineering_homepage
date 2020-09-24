@@ -34,7 +34,6 @@
 						<li><a href="../01/Uebung1.html#1.3"><b>Aufgabe 3</b></a></li>
 					</ul>
 				</li>
-				</li>
 				<!-- Übung 2 -->
 				<li><a href="../02/Uebung2.html"><b>Übung 2</b></a>
 					<ul>
@@ -46,15 +45,37 @@
 				</li>
 				<!-- Übung 3 -->
 				<li><a href="../03/Uebung3.html"><b>Übung 3</b></a>
+					<ul>
+						<li><a href="../03/Uebung3.html#3.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="../03/Uebung3.html#3.2"><b>Aufgabe 2</b></a></li>
+						<li><a href="../03/Uebung3.html#3.3"><b>Aufgabe 3</b></a></li>
+						<li><a href="../03/Uebung3.html#3.4"><b>Aufgabe 4</b></a></li>
+					</ul>
 				</li>
 				<!-- Übung 4 -->
 				<li><a href="../04/Uebung4.html"><b>Übung 4</b></a>
+					<ul>
+						<li><a href="../04/Uebung4.html#4.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="../04/Uebung4.html#4.2"><b>Aufgabe 2</b></a></li>
+					</ul>
 				</li>
 				<!-- Übung 5 -->
 				<li><a href="../05/Uebung5.html"><b>Übung 5</b></a>
+					<ul>
+						<li><a href="../05/Uebung5.html#5.0"><b>Aufgabe 0</b></a></li>
+						<li><a href="../05/Uebung5.html#5.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="../05/Uebung5.html#5.2"><b>Aufgabe 2</b></a></li>
+						<li><a href="../05/Uebung5.html#5.3"><b>Aufgabe 3</b></a></li>
+					</ul>
 				</li>
 				<!-- Übung 6 -->
 				<li><a href="Uebung6.html"><b>Übung 6</b></a>
+					<ul>
+						<li><a href="Uebung6.html#6.0"><b>Aufgabe 0</b></a></li>
+						<li><a href="Uebung6.html#6.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="Uebung6.html#6.2"><b>Aufgabe 2</b></a></li>
+						<li><a href="Uebung6.html#6.3"><b>Aufgabe 3</b></a></li>
+					</ul>
 				</li>
 				<!-- Übung 7 -->
 				<li><a href="../07/Uebung7.html"><b>Übung 7</b></a>
@@ -89,7 +110,101 @@
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">			
+		<div id="content">	
+		<!-- Einführung in das Thema -->
+			<h2><b>6. Asynchrones JavaScript</b></h2>
+				<div id="uebung">				
+				<a>Ajax, Promise, async/await, Events, Worker</a>
+				</div>
+				<div id="unteruebung">
+				<a><b>Inhalt:</b></a>
+				<div id="antwort">
+				<a class="href" href="Vorlesung6.pdf">Vorlesung 6</a>
+				</div>
+				<a><b>Lernziele:</b><br></a>
+				<div id="antwort">
+				<ol>
+				<li><a> Die Metamorphose des WWW erkl&aumlren k&oumlnnen.</a></li>
+				<li><a> Den Kategorienfehler des WWW erkl&aumlren k&oumlnnen.</a></li>
+				<li><a> Mit Ajax programmieren können.</a></li>
+				<li><a> Mit Promise programmieren können.</a></li>
+				<li><a> Mit async / await programmieren können.</a></li>
+				<li><a> Mit Events programmieren können.</a></li>
+				<li><a> Event Loop des Browsers erklären können.</a></li>
+				<li><a> Nebenläufige Worker programmieren können.</a></li>
+				</ol>
+				</div>
+				<a><b>Literatur:</b></a>				
+				<div id="antwort">
+				<ul>
+					<li><a class="href" href="https://dev.to/macmacky/70-javascript-interview-questions-5gfi">70 JavaScript Interview Questions</a></li>
+					<li><a class="href" href="https://www.guru99.com/javascript-interview-questions-answers.html">Top 85 JavaScript Interview Questions & Answers</a></li>
+					<li><a class="href" href="https://www.toptal.com/javascript/interview-questions">37 Essential JavaScript Interview Questions</a></li>
+					<li><a class="href" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN Promise</a></li>
+					<li><a class="href" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">MDN async / await</a></li>
+					<li><a class="href" href="https://exploringjs.com/es6/ch_promises.html">Rauschmayer: Promise</a></li>
+					<li><a class="href" href="https://exploringjs.com/es2016-es2017/ch_async-functions.html">Rauschmayer: async / await</a></li>
+					<li><a class="href" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">MDN fetch</a></li>
+					<li><a class="href" href="https://de.wikipedia.org/wiki/Ajax_(Programmierung)">AJAX</a></li>
+				</ul>
+				</div>
+				<a><b>Mögliche Klausuraufgaben:</b></a>	
+				<ul>					
+					<li><a>Übersetzen Sie die setTimeout-Funktion in die Promise-Schreibweise.</a></li>					
+					<li><a>Übersetzen Sie die Promise-Schreibweise in async / await.</a></li>					
+					<li><a>Wie können Sie mit der fetch-API zwei Dateien 'A.json' und 'B.json' parallel vom Server laden und deren Inhalte auf der Konsole ausgeben? Geben Sie 2 Lösungen an, (a) Promise-Syntax (b) async / await.</a></li>
+				</ul>
+				<br>
+			</div>
+			<br>			
+			<!-- Übung 6.0 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="6.0">6.0 W3Schools-Tutorial durcharbeiten</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Arbeiten Sie das </a><a class="href" href="https://www.w3schools.com/js/js_ajax_intro.asp">W3Schools-Tutorial zu AJAX</a><a> durch. Nutzen Sie das dort eingebaute <font color="#a4c8a5">"Try it Yourself"</font> für eigene Experimente.</b></a>
+				<br>	
+				<br>
+				</div>
+			<br>
+			<!-- Übung 6.1 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="6.1">6.1 Promises (2 Punkte)</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Erstellen Sie auf Ihrem Server www2.inf.h-brs.de (oder localhost) zwei Text-Dateien A.txt und B.txt mit ungefähr gleich vielen Zeilen. Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server. Geben Sie auf einer Webseite den Inhalt beider Dateien zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll. Die beiden Dateien sollen also zeilenweise konkateniert werden. Erzielen Sie max. Geschwindigkeit durch paralleles Laden. Verwenden Sie dabei ausschließlich die Promise API ohne async / await.</b></a>
+					<div id="antwort">
+					</div>	
+				</div>
+			<br>
+			<!-- Übung 6.2 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="6.2">6.2 async / await (1 Punkt)</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Lösen Sie die letzte Aufgabe mit async / await statt Promise.</b></a>
+					<div id="antwort">
+					</div>	
+				</div>
+			<br>			
+			<!-- Übung 6.3 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="6.3">6.3 WWW-Navigator (7 Punkte)</span></b></a>
+			</div>
+
+				<div id="unteruebung">	
+					<a><b>Schreiben Sie einen Navigator für die Fachbegriffe des WWW zu den Oberthemen HTML, CSS und JavaScript. Im Hauptmenü sollen diese 3 Oberthemen zur Auswahl stehen. Im Untermenü soll eine zugehörige Liste von Fachbegriffen zum jeweiligen ausgewählten Oberthema stehen. In der Mitte soll eine Dokumentation zum ausgewählten Fachbegriff erscheinen mit Hyperlinks zu den anderen Fachbegriffen. Wird auf einen solchen Hyperlink geklickt, so sollen sich auch die beiden Menüs anpassen. Mit einem Button soll ein Zurücksprung möglich sein.</b></a>
+					<a><b>Schreiben Sie in HTML und CSS nur den Rahmen für einen solchen WWW-Navigator. Dabei können Sie auch ein schöneres Layout selbst erstellen. Die Inhalte sollen in einer JSON-Datei extern gelagert werden. Mit der fetch-API soll die JSON-Datei asynchron nicht-blockierend geladen werden. Sobald die Inhalte angekommen sind, sollen sie im Browser auch angezeigt werden.</b></a>
+					<a><b>Fügen Sie in die JSON-Datei Inhalte zu einigen Themen als Strings beispielhaft ein. Wenn Sie Inhalte aus fremden Quellen kopieren, so schreiben Sie bitte stets die Quelle als externe Ressource hinzu. Diese soll dann auf der rechten Seite im WWW-Navigator erscheinen.</b></a>
+					<br>
+					<br>			
+					<img src="a6.3.1.jpg"height="180" alt="image-a6.3.1">			
+					<img src="a6.3.2.jpg"height="180" alt="image-a6.3.2">
+					<br>
+					<div id="antwort">
+					</div>		
+				</div>
+			<br>	
 		</div>
 		</td>
 		<td WIDTH="20%">
