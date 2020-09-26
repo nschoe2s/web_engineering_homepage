@@ -184,3 +184,33 @@ mark{
 	color: #fff;
 }
 /* Hier endet der kopierte Code */			
+			
+/* Anderer Radio-Style */
+/* https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons */ 
+input[type='radio']:after {
+	width: 13px;
+	height: 13px;
+	border-radius: 13px;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	background-color: #a4c8a5;
+	content: '';
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid white;
+}
+input[type='radio']:checked:after {
+	width: 13px;
+	height: 13px;
+	border-radius: 13px;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	background-color: #222;
+	content: '';
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid white;
+}
+/* Hier endet der kopierte Code */

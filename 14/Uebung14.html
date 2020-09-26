@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Web Engineering</title>
-		<link rel="stylesheet" href="../layout.css">		
+		<link rel="stylesheet" href="../layout.css">
 	</head>
 	<body>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -114,15 +114,39 @@
 				</li>
 				<!-- Übung 11 -->
 				<li><a href="../11/Uebung11.html"><b>Übung 11</b></a>
+					<ul>
+						<li><a href="../11/Uebung11.html#11.0"><b>Aufgabe 0</b></a></li>
+						<li><a href="../11/Uebung11.html#11.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="../11/Uebung11.html#11.2"><b>Aufgabe 2</b></a></li>
+						</ul>
 				</li>
 				<!-- Übung 12 -->
 				<li><a href="../12/Uebung12.html"><b>Übung 12</b></a>
+					<ul>
+						<li><a href="../12/Uebung12.html#12.0"><b>Aufgabe 0</b></a></li>
+						<li><a href="../12/Uebung12.html#12.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="../12/Uebung12.html#12.2"><b>Aufgabe 2</b></a></li>
+						<li><a href="../12/Uebung12.html#12.3"><b>Aufgabe 3</b></a></li>
+						<li><a href="../12/Uebung12.html#12.4"><b>Aufgabe 4</b></a></li>
+					</ul>
 				</li>
 				<!-- Übung 13 -->
 				<li><a href="../13/Uebung13.html"><b>Übung 13</b></a>
+					<ul>
+						<li><a href="../13/Uebung13.html#13.0"><b>Aufgabe 0</b></a></li>
+						<li><a href="../13/Uebung13.html#13.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="../13/Uebung13.html#13.2"><b>Aufgabe 2</b></a></li>
+					</ul>
 				</li>
 				<!-- Übung 14 -->
 				<li><a href="Uebung14.html"><b>Übung 14</b></a>
+					<ul>
+						<li><a href="Uebung14.html#14.0"><b>Aufgabe 0</b></a></li>
+						<li><a href="Uebung14.html#14.1"><b>Aufgabe 1</b></a></li>
+						<li><a href="Uebung14.html#14.2"><b>Aufgabe 2</b></a></li>
+						<li><a href="Uebung14.html#14.3"><b>Aufgabe 3</b></a></li>
+						<li><a href="Uebung14.html#14.4"><b>Aufgabe 4</b></a></li>
+					</ul>
 				</li>
 			</ul>
 		</div>
@@ -133,8 +157,594 @@
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">			
-		</div>
+		<div id="content">	
+		<!-- Einführung in das Thema -->
+			<h2><b>14. Web App Security</b></h2>
+				<div id="uebung">				
+				<a>Open Web Application Security Project (OWASP)</a>
+				</div>
+				<div id="unteruebung">
+				<a><b>Inhalt:</b></a>
+				<div id="antwort">
+				<a class="href" href="Vorlesung14.pdf">Vorlesung 14</a>
+				</div>
+				<a><b>Lernziele:</b><br></a>
+				<div id="antwort">
+				<ol>
+				<li> <a>OWASP Top 10 kennen.</a></li>
+				<li> <a>Security Requirements Engineering anwenden können.</a></li>
+				<li> <a>General Security Guidelines anwenden können.</a></li>
+				<li> <a>Whitelisting anwenden können.</a></li>
+				<li> <a>Sicherheitslücken kennen und verhindern können.</a></li>
+				<li> <a>XSS verhindern können.</a></li>
+				<li> <a>CSRF verhindern können.</a></li>
+				<li> <a>window.opener - Sicherheitslücke verhindern können.</a></li>
+				<li> <a>Regular expression Denial of Service - ReDoS verhindern können.</a></li>
+				<li> <a>Sicherheitsmaßnahmen kennen und einsetzen können.</a></li>
+				<li> <a>Content Security Policy (CSP) anwenden können.</a></li>
+				<li> <a>Subresource Integrity (SRI) anwenden können.</a></li>
+				<li> <a>JSON Web Token (JWT) anwenden können.</a></li>
+				</ol>
+				</div>
+				<a><b>Literatur, Tutorials und Videos:</b></a>				
+				<div id="antwort">
+				<ul>
+					<li>
+						<a><b>Web App Security</b></a>
+						<ul>
+							<li><a class="href" href="https://link.springer.com/book/10.1007/978-3-658-20145-6">Sicherheit von Webanwendungen in der Praxis</a><a> Wie sich Unternehmen schützen können – Hintergründe, Maßnahmen, Prüfverfahren und Prozesse, Springer-Link, E-Book, 2018.</a></li>
+							<li><a class="href" href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/">OWASP Top 10 Application Security Risks - 2017</a><a> im OWASP Wiki, auch als </a><a class="href" href="https://owasp.org/images/7/72/OWASP_Top_10-2017_(en).pdf.pdf">PDF</a><a>.</a></li>
+							<li><a class="href" href="https://www.youtube.com/watch?v=avFR_Af0KGk">Web Application Security Risks: A Look at OWASP Top Ten 2017 - Christian Wenz</a></li>
+							<li><a class="href" href="https://en.wikipedia.org/wiki/Content_Security_Policy">Content Security Policy</a></li>
+							<li><a class="href" href="https://security.stackexchange.com/">StackExchange Forum</a></li>
+							<li><a class="href" href="https://snyk.io/">Snyk</a><a>: use open source without compromising security</a></li>
+							<li><a class="href" href="https://www.veracode.com/security/web-application-vulnerabilities">COMMON WEB APPLICATION VULNERABILITIES</a></li>
+							<li><a class="href" href="https://pentest-tools.com/website-vulnerability-scanning/website-scanner">Website Vulnerability Scanner</a></li>
+							<li><a class="href" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">OWASP: Cross Site Scripting Prevention Cheat Sheet</a></li>
+							<li><a class="href" href="https://cheatsheetseries.owasp.org/cheatsheets/PHP_Configuration_Cheat_Sheet.html">PHP Security Cheat Sheet</a></li>
+							<li><a class="href" href="https://www.php.net/manual/de/security.php">PHP-Handbuch, Kapitel zum Thema Security</a></li>
+							<li><a class="href" href="https://php.earth/docs/security/intro">How to secure PHP web applications and prevent attacks?</a></li>
+							<li><a class="href" href="https://stackoverflow.com/questions/1996122/how-to-prevent-xss-with-html-php">How to prevent XSS with HTML/PHP?</a></li>
+							<li><a class="href" href="https://www.youtube.com/watch?v=jXP7b-xby6U">Google Talk: How To Break Web Software - A look at security vulnerabilities in web software</a></li>
+							<li><a class="href" href="https://www.youtube.com/watch?v=LL_n7dlBgfY">Google Talk: What Every Engineer Needs to Know About Security and Where to Learn It</a></li>
+							<li><a>Valentin Wüstholz, Oswaldo Olivo, Marijn J. H. Heule, and Isil Dillig: </a><a class="href" href="https://www.cs.utexas.edu/~isil/redos.pdf">Static Detection of DoS Vulnerabilities in Programs that use Regular Expressions</a><a>, The University of Texas at Austin.</a></li>
+							<li><a class="href" href="https://stackoverflow.com/questions/12841970/how-can-i-recognize-an-evil-regex">How canhttp://www.dict.cc/ I recognize an evil regex?</a></li>
+						</ul>
+					</li>	
+					<li>
+						<a><b>OpenID, OAuth und JSON Web Token</b></a>
+						<ul>
+							<li><a class="href" href="https://openid.net/connect/">openid.net/connect/</a></li>
+							<li><a class="href" href="https://openid.net/connect/faq/">openid.net/connect/faq/</a></li>
+							<li><a class="href" href="https://openid.net/specs/openid-connect-core-1_0.html">openid.net/specs/openid-connect-core-1_0.html</a></li>
+							<li><a class="href" href="https://developer.okta.com/docs/concepts/auth-overview/">developer.okta.com/docs/concepts/auth-overview</a></li>
+							<li><a class="href" href="https://developer.okta.com/blog/2019/08/22/okta-authjs-pkce">Implement the OAuth 2.0 Authorization Code with PKCE Flow</a></li>
+							<li><a class="href" href="https://en.wikipedia.org/wiki/OpenID_Connect">en.wikipedia.org/wiki/OpenID_Connect</a></li>
+							<li><a class="href" href="https://en.wikipedia.org/wiki/JSON_Web_Token">en.wikipedia.org/wiki/JSON_Web_Token</a></li>
+							<li><a class="href" href="https://tools.ietf.org/html/rfc7519">tools.ietf.org/html/rfc7519</a></li>
+							<li><a class="href" href="https://github.com/joellord/auth0-vue-udemy">github.com/joellord/auth0-vue-udemy</a></li>
+						</ul>
+					</li>	
+				</ul>
+				</div>
+				<a><b>Mögliche Klausuraufgaben:</b></a>	
+				<ul>		
+					<li><a>Was ist das positive Sicherheitsmodell und warum wird es bevorzugt?</a></li>						
+					<li><a>Nennen Sie die OWASP Top 10 Sicherheitsprobleme für WebApps.</a></li>						
+					<li><a>Was sind die wichtigsten Web App Security Risks? Beschreiben Sie die OWASP Top 3 und geben Sie je ein PHP-Beispiel.</a></li>						
+					<li><a>Was sind die General Security Guidelines? Nennen Sie für jeden Punkt ein Beispiel.</a></li>						
+					<li><a>Schreiben Sie in PHP eine WebApp, die für XSS-Angriffe anfällig ist. Definieren Sie den Angriffsvektor. Geben Sie einen konkreten Exploit an. Erweitern Sie Ihre PHP-WebApp um einen XSS-Schutz.</a></li>						
+					<li><a>Sicherer Array Wrapper</a></li>											
+					<li><a>Beschreiben Sie die window.opener - Sicherheitslücke und geben Sie ein Beispiel.</a></li>										
+					<li><a>Beschreiben Sie die Content Security Policy (CSP) und geben Sie ein Beispiel.</a></li>										
+					<li><a>Beschreiben Sie Subresource Integrity (SRI) und geben Sie ein Beispiel.</a></li>										
+					<li><a>Beschreiben Sie JSON Web Token (JWT) und geben Sie ein Beispiel.</a></li>										
+				</ul>
+				<br>
+			</div>
+			<br>			
+			<!-- Übung 14.0 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="14.0">14.0 Security-Tutorial</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Lesen Sie in dem Buch </a><a class="href" href="https://link.springer.com/book/10.1007/978-3-658-20145-6">Sicherheit von Webanwendungen in der Praxis</a><a> den Abschnitt 2.7.3 über XSS auf den Seiten 77 bis 86.</b></a>
+					<br><br>
+				</div>
+			<br>
+			<!-- Übung 14.1 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="14.1">14.1 XSS (2 Punkte)</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Lesen Sie in dem Buch </a><a class="href" href="https://link.springer.com/book/10.1007/978-3-658-20145-6">Sicherheit von Webanwendungen in der Praxis</a><a> den Abschnitt 2.7.3 über XSS auf den Seiten 77 bis 86. <br>Schreiben Sie in PHP eine Web App, die für XSS-Angriffe anfällig ist.<br>Definieren Sie den Angriffsvektor. <br>Geben Sie einen konkreten Exploit an.<br>Erweitern Sie Ihre PHP-WebApp um einen XSS-Schutz.</b></a>
+					<div id="antwort">
+					</div>	
+				</div>
+			<br>
+			<!-- Übung 14.2 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="14.2">14.2 Sicherer Array Wrapper (2 Punkte)</span></b></a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Implementieren Sie eine Funktion zur Berechnung eines sicheren "Array Wrapper"-Objekts mit den Methoden get, set und append, so dass ein Angreifer keinen Zugriff auf das innere, private Array hat. <br>Wie in der Vorlesung besprochen, ist folgender JavaScript-Code unsicher:<br>Die Angriffsmöglichkeiten wurden in der Vorlesung besprochen. Wie kann man den Code sicher machen?</b></a>
+					<br>
+					<br>			
+					<img src="a14.2.jpg"width="200" alt="image-a14.2">
+					<div id="antwort">
+					</div>	
+				</div>
+			<br>	
+			<!-- Übung 14.3 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="14.3">14.3 Sicherheitslücken finden (2 Punkte)</span></b></a>
+			</div>
+			<div id="uebung">
+			<a>Öffnen Sie die Webseite </a><a class="href" href="http://express-todo-example.dreamerslab.com/">Todo Example</a><a>, in der Sie Ihre ToDo-Liste verwalten können. Versuchen Sie so viele Sicherheitslücken wie möglich zu finden.</a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Geben Sie hier die gefundenen Sicherheitslücken ein. Beschreiben Sie zu jeder Sicherheitslücke den Angriffsvektor, den Typ der Sicherheitslücke und wie man diesen hätte vermeiden können.</b></a>
+					<div id="antwort">
+					</div>
+				</div>
+			<br>	
+			<!-- Übung 14.4 -->
+			<div id="uebungsueberschrift">	
+				<a><b><span id="14.4">14.4 Klausurfragen als Quiz (2 Punkte)</span></b></a>
+			</div>
+			<div id="uebung">
+			<a>Wiederholen Sie den Stoff der Vorlesung "Einführung in Web Engineering", indem Sie folgendes Quiz durcharbeiten:</a>
+			</div>
+				<div id="unteruebung">	
+					<a><b>Question 1/12: Was ist mit der Orthogonalität des Webs gemeint und was hat dies für positive Auswirkungen auf das Web?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio1" >
+								</td>
+								<td>
+									<a>Mit Orthogonalität des Webs ist die Unabhängigkeit der einzelnen Komponenten gemeint.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio1"  >
+								</td>
+								<td>
+									<a>Mit Orthogonalität des Webs ist die Unabhängigkeit der einzelnen Komponenten gemeint. Sprich Html CSS usw sind nicht voneinander abhängig. Sie werden separat entwickelt und können deshalb agiler funktionieren. Es erlaubt weiterhin eine Modularität die ein Ökosystem fördert in der jeder Pakete erstellen und auf open Source ebene verbessern kann.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio1">
+								</td>
+								<td>
+									<a>Das erlaubt ein Modulares Web.</a>
+								</td>
+							</tr>
+						</table>
+					</div>				
+					<a><b>Question 2/12: Mit welchem, die CSS-Regeln umschließenden Kontext, implementieren Sie ein responsives Webdesign sowohl für Desktop als auch mobile Geräte und welche beiden Ansätze gibt es dabei?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio2" >
+								</td>
+								<td>
+									<a>Mithilfe einer Javascript Funktion die an das Event window.onresize gebunden ist und das Seitenlayout mithilfe von CSS verändert.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio2">
+								</td>
+								<td>
+									<a>Mithilfe einer Javascript Funktion die an das Event window.onresize gebunden ist.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio2">
+								</td>
+								<td>
+									<a>Durch separate Implementierung einer Desktop-Version und einer mobilen Version einer Webseite.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio2">
+								</td>
+								<td>
+									<a>Durch Verwendung sog. Media-Queries.Dabei gibt es zwei Ansätze:Ansatz A: Man beginnt beim Design seiner CSS-Regeln mit einem Layout für den Einsatz in der Desktop Umgebung. Damit sich das Layout bei kleiner werdendem Viewport entsprechend anpasst, definiert man im Nachhinein Media-Queries, die erst beim Unterschreiten einer bestimmten Viewport-Größe aktiv werden und die dafür vorgesehenen Regeln beinhalten (Desktop First).Ansatz B: Man geht umgekehrt vor und fängt mit der Definition von CSS-Regeln für Geräte mit kleinem Monitor an. Auch hier definiert man wieder Media-Queries, die aber erst beim Überschreiten einer best. Viewport-Größe aktiv werden (Mobile First).</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 3/12: Was ist der Unterschied zwischen XSS und CSRF?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio3">
+								</td>
+								<td>
+									<a>XSS ist eine Unterklasse von CSRF.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio3">
+								</td>
+								<td>
+									<a>XSS nutzt das Vertrauen der Webseite, CSRF das Vertrauen des Users.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio3">
+								</td>
+								<td>
+									<a>CSRF ist eine Unterklasse von XSS.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio3">
+								</td>
+								</td>
+								<td>
+									<a>XSS nutzt das Vertrauen des Users, CSRF das Vertrauen der Webseite.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 4/12: Ist JavaScript multi- oder single threaded?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio4">
+								</td>
+								<td  >
+									<a>Single threaded.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio4">
+								</td>
+								<td  >
+									<a>Mutlithreaded.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio4">
+								</td>
+								<td  >
+									<a>Multi threaded, weil JS erlaubt die Event-Loop zu manipulieren. Somit ist es möglich zwei Prozesse parallel abzuarbeiten.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio4">
+								</td>
+								</td>
+								<td  >
+									<a>Single & mutli threaded, in JS ist es möglich beides zu implementieren.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 5/12: Was sind Media Querys und wofür braucht man diese ?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio5" >
+								</td>
+								<td  >
+									<a>Media Querys sind dafür da interaktiv über eine HTML Seite SQL Querys an eine Datenbank zu schicken und angezeigt zu bekommen.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio5">
+								</td>
+								<td  >
+									<a>Media Querys benötigt man für Responsive Web Design. Bei diesem wird unterschieden zwischen Desktop First (Wobei auf die Minimale breite reagiert wird), Mobile first(Wobei auf die Maximale breite reagiert wird) Damit die Webseite auf den jeweiligen geräten garantiert richtig angezeigt wird.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio5">
+								</td>
+								<td  >
+									<a>Media Querys werden benötigt um bestimmte HTML Elemente in einem Document zu findenBsp.:var matches = document.querySelectorAll("p");damit alle paragraphen aus einem HTML Dokument gesucht werden.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio5">
+								</td>
+								</td>
+								<td  >
+									<a>Media Querys sind dafür da ein RWD(Responsive Web Design) zu schaffen, indem ab bestimmten maximalen breiten(Desktop first) oder bestimmten minimalen breiten(Mobile first) neue CSS Regeln, welche in einer solchen Media Query Definiert sind, wirken wodurch man das Design einer Website an verschiedene Bildschirmgrößen anpassen kann.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 6/12: Was sind die Unterschiede zwischen HTTP GET und POST?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio6" >
+								</td>
+								<td  >
+									<a>Die Namen dienen nur zur Kennzeichnung und die Übermittlung ist bei beiden gleich.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio6">
+								</td>
+								<td  >
+									<a>Bei der GET-Methode werden Parameter in der URL übermittelt und bei POST über den Request-body. Die GET Parameterlänge ist zudem begrenzt und es ist nicht möglich Dateien über GET zu übermitteln. Zudem können Seiten mit POST nicht einfach erneut aufgerufen werden, da dann die Parameter fehlen.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio6">
+								</td>
+								<td  >
+									<a>POST Seiten können im Browser nicht direkt über eine URL aufgerufen werden und können nur über JavaScript benutzt werden um z.B. Daten im Hintergrund zu laden.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio6">
+								</td>
+								</td>
+								<td  >
+									<a>Bei POST stehen die Parameter in der URL und bei GET im Request-body.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 7/12: React vs Vue: In Vue existieren die sog. "directives". a ) Erläutern Sie dessen Funktionalität sowie dessen Funktionalitätsumsetzung in React. b ) Machen Sie dies bitte am Beispiel einer If-Abfrage deutlich. Coden sie jeweils eine simple funktionierende, komplette Component mit dem namen "Auth". Sie möchten folgendes anzeigen: "User ist eingeloggt", wenn ein user eingeloggt ist. Im negativen Fall soll: "User ist nicht eingeloggt" ausgegeben werden. Gehen Sie davon aus das sich in Ihrem state eine Variable namens "eingeloggt" befindet die die entsprechende boolsche Information bereitstellt.c) Sie möchten möglichst flexibel programmieren und agieren, würden Sie eher zu Vue oder zu React greifen?(Hinweis: Importe müssen Sie nur angeben, falls diese über sog. Standardimport wie "import React from 'react';" hinausgehen". Ihre Lösung darf vorrausetzen, dass Sie React/Vue per npm installiert haben und betreiben)</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio7" >
+								</td>
+								<td  >
+									<a>a) mit directives werden dem Programmierer Möglichkeiten geboten eigenes Javascript in directive tags auszuführenb) irgendein falscher code.c) Vue weil es neuer und schöner ist</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio7">
+								</td>
+								<td  >
+									<a>a) directives sind html-tags die da sind um Styles zu definieren.b) irgendein falscher code.c) Vue weil hier mehr features geboten werden um flexibel auf Anfragen von möglichen Kunden reagieren zu können.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio7">
+								</td>
+								<td  >
+									<a>a) directives sind tags die beim html rendering verwendet werden um Funktionalität anzuzueigen. Die reine Funktionalität muss jedoch selbst programmiert werdenb) irgendein falscher code.c) Vue weil es neuer und schöner ist</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio7">
+								</td>
+								</td>
+								<td  >
+									<a>a) Directives sind vordefinierte HTML-Tag-Attribute, die die Vue engine anweisen etwas (durch das entsprechende directive definiert) mit einem DOM-Element zu tun. In React existieren solche predefines nicht. Man greift hier einfach "plain" Javascript zurück.b)Vue:React:const Auth = (eingeloggt) => ({eingeloggt ?User ist eingeloggt:User ist nicht eingeloggt});export default Auth;c) React. Wie gerade gezeigt gibt es in Vue einige Funktionen und Optionen, die bereits durch die Hersteller zur Verfügung gestellt wurden (e.g directives). In React ist man vom Grunde her noch etwas flexibler. Dies ist auch einer der größten Unterschiede, warum React eine library ist und Vue ein Framework.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 8/12: Mit der folgenden Funktion können Sie eine Funktion registrieren, die einmal aufgerufen werden soll:</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio8" >
+								</td>
+								<td  >
+									<a>setTotaltime ()</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio8">
+								</td>
+								<td  >
+									<a>setTimeout ()</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio8">
+								</td>
+								<td  >
+									<a>setInterval ()</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio8">
+								</td>
+								</td>
+								<td  >
+									<a>keiner der genannten</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 9/12: Wofür wird "Responsive Webdesign" verwendet und durch welche Methoden wird dieses realisiert?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio9">
+								</td>
+								<td  >
+									<a>Unter einer responsiven Websitegestaltung versteht man, dass sich die Website dynamisch und selbstständig an das Ausgabemedium anpasst. DIe Zwei Methoden, die verwendet werden heißten "Desktop First" und "Mobile First".</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio9">
+								</td>
+								<td  >
+									<a>Unter responsiven Webdesign versteht man die dynmmische Entwicklung einer Website, die auf den jeweiligen menschlichen Benutzer angepasst ist. Dafür werden Cookies verwendet, um den jeweiligen Menschen zu identifizieren.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio9">
+								</td>
+								<td  >
+									<a>Responsive Websitegestaltung zielt auf die dynamische Nutzung und Anzeige der Website ab. Die zwei Methoden hierbei sind: Angular-React und JavaScript-Only.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio9">
+								</td>
+								</td>
+								<td  >
+									<a>Unter einer responsiven Websitegestaltung versteht man, dass sich die Website dynamisch und selbstständig an das Ausgabemedium anpasst. Die zwei Methoden sind dabei: Small First und Big First.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 10/12: Nennen Sie 5 Vorteile von Vue.js.</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio10" >
+								</td>
+								<td  >
+									<a>Viele Beispiele, gute Dokumentation und fertige Komponenten.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio10">
+								</td>
+								<td  >
+									<a>Etabliertes Framework, ...</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio10">
+								</td>
+								<td  >
+									<a>Dokumentation für alle verständlich (fast ausschließlich auf Englisch), ...</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio10">
+								</td>
+								</td>
+								<td  >
+									<a>Geringerer Lernaufwand als bei anderen Frameworks, stärkstes Wachstum an Nutzung, viele Beispiele, viele fertige Komponenten und sehr gute Dokumentation.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 11/12: Warum sind die Begriffe Internet und World Wide Web nicht synonym verwendbar?</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio11" >
+								</td>
+								<td  >
+									<a>Die Begriffe beschreiben beide die gleiche Technologie. Apple nannte sie Internet und Microsoft nannte sie World Wide Web.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio11">
+								</td>
+								<td  >
+									<a>Das Internet wird militärisch eingesetzt. Das World Wide Web ist auch der zivilen Bevölkerung zugänglich.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio11">
+								</td>
+								<td  >
+									<a>Internet und World Wide Web beschreiben jeweils andere Konzepte.Während das Internet die weltweite Vernetzung von Computersystemen auf Basis des TCP/IP-Protokollstacks beschreibt (also eher eine Technologie), beschreibt das World Wide Web einen Informationsraum auf Basis der Technologien HTML, HTTP und URI, in dem der Zugriff auf verteilte Inhalte ermöglicht wird (also eher eine Anwendung).</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio11">
+								</td>
+								</td>
+								<td  >
+									<a>Das Internet beschreibt ein Netzwerk, das World Wide Web ist ein Synonym für den Browser.</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<a><b>Question 12/12: Wofür steht die Abkürzung MEVN in „MEVN-Stack“. Nennen Sie die einzelnen Bestandteile und erläutern Sie deren Aufgaben im Zusammenhang des MEVN-Stacks.</b></a>
+					<div id="antwort">
+						<table>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio12">
+								</td>
+								<td  >
+									<a>M – MongoDB:MongoDB ist eine open-source, dokumentenbasierte NoSQL-Datenbank, die darauf ausgelegt ist JSON-ähnliche Dokumente zu speichern. Durch die JSON-ähnliche Struktur sehr gut im Verbund mit JavaScript verwendbar. Wird von Node.js über entsprechende Treiber angesprochen.E – Express:Express ist ein Node Modul zum Schreiben von Web-Servern und REST basierten APIs. Es baut auf dem http-Modul auf und fügt einige Web-Server-Funktionen hinzu (z.B. routing).V – Vue.js:Vue ist ein JavaScript Framework zum schreiben von komplexen User-interfaces von Web-Apps. Gewinnt immer mehr an Beliebtheit. Spricht über http-requests mit dem backend (express + node).N – Node.js:Node.js ist eine JavaScript runtime, die die Ausführung von JS ohne Browser ermöglicht. Basiert auf der JS V8 Engine von Chrome.</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px" VALIGN="TOP">
+									<input type="radio" name="radio12">
+								</td>
+								<td  >
+									<a>M – MongoDB:</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio12">
+								</td>
+								<td  >
+									<a>V – Vue.js:</a>
+								</td>
+							</tr>
+							<tr>
+								<td WIDTH="40px"VALIGN="TOP">
+									<input type="radio" name="radio12">
+								</td>
+								</td>
+								<td  >
+									<a>N – Node.js:</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			<br>		
+		</div>			
 		</td>
 		<td WIDTH="20%">
 		</td>
