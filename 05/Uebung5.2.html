@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml5.2</title>
+	</head>
+	<body>
+		<h1>Rednerliste</h1>
+		<label for="eingabe">Neuer Redner: </label>
+		<input id="eingabe" value="" type="text">
+		<button id="createTimer">Hinzufügen</button>
+		<ul id="eintraege"></ul>
+		<script>		
+			/* Implementieren Sie die interaktive Anwendung "Rednerliste mit Zeitmessung"
+			selbstständig in JavaScript durch Nutzung der DOM API und der Timer-Funktionen.
+			Neue Redner sollen auf Knopfdruck hinzugefügt werden können. Deren Uhr wird dann
+			sofort automatisch gestartet und alle anderen Uhren angehalten. Bei jedem Redner
+			soll die individuelle, gemessene Redezeit sekundengenau angezeigt werden.
+			Für jeden Redner soll es einen eigenen Start-/Stopp-Button geben. Es soll immer nur
+			eine Uhr laufen. Angezeigt werden sollen die bisherigen Summenzeiten aller
+			Redebeiträge der betreffenden Person. Suchen Sie eine möglichst kurze und elegante Lösung. */
+			
+			//getElementByID('id') Element wird über seine ID 'id' angesprochen
+			//innerText füllt das Element mit Text
+			//querySelector('output') das output-Element wird über die querySelector-methode angesprochen. 
+			//die Methode gibt das erste Element zurück, das dem angegebenen CSS-Selektor (hier output) entspricht
+			//getElementsByTagName: greift auf ein beliebiges Element im Elementenbaum des Dokuments zu.
+			//getElementsByClassName: gibt eine Liste von Elementen zurück, die der angegebenen Klasse entsprechen
+			const ul = document.querySelector('ul'); //Referenz für die Rednerliste (auf output-Element mit querySelector zugreifen)
+			const input = document.querySelector('input');  // Referenz für das Eingabefeld (auf output-Element mit querySelector zugreifen)
+			const createTimer = document.getElementById('createTimer'); // Referenz für createTimer (auf Element mit der ID 'createTimer' mit getElementByID zugreifen)
+			createTimer.onclick = function() { // Timer definieren
+				if (input.value!="") {// Redner mit leerem Namen vermeiden
+					var timer = new Timer(input.value); // neuen Redner mit Eingabename und mit Timer erstellen
+					var anderer = document.getElementsByClassName('an'); // Referenz für laufenden anderen Redner
+					[...anderer].forEach(element => { element.click(); element.setAttribute("class", "annicht");}); // Anderen Redner stoppen
+					timer.start(); // Timer des neuen Redners starten
+					const listItem = document.createElement('li'); //Einzelne Listenpunkte erstellen
+					listItem.setAttribute("class", "listItems"); //Attribute setzen
+					ul.appendChild(listItem); //erzeugtes HTML Element in DOM-Baum einfügen
+					const redner = document.createElement('span'); //Redner erstellen
+					listItem.appendChild(redner);//erzeugtes HTML Element in den DOM-Baum einfügen
+					const zeit = document.createElement('span'); //Zeit erstellen
+					listItem.appendChild(zeit);//erzeugtes HTML Element in den DOM-Baum einfügen
+					const toggle = document.createElement('button'); //ToggleButton erstellen
+					toggle.setAttribute("class", "an"); //Attribute setzen
+					listItem.appendChild(toggle); //erzeugtes HTML Element in den DOM-Baum einfügen
+					redner.innerHTML = `${timer.getRedner()} `; //Redner in HTML anzeigen
+					const htmlTimer = setInterval( () => zeit.innerHTML = `${timer.getZeit()} `); //Timer in HTML anzeigen
+					toggle.innerHTML = `Stopp!`; //In HTML Stopp als möglichen nächsten Zustand anzeigen
+					toggle.onclick = () => { //Toggle Button definieren
+						if(timer.timerAn()){ // Definiere Start->Stop
+							timer.stop(); //Zustand auf Stopp setzen
+							toggle.setAttribute("class", "annicht"); //Attribute setzen
+							toggle.innerHTML = `Start!`; //In HTML Start als möglichen nächsten Zustand anzeigen
+						}
+						else { // Definiere Stop->Start
+							var anderer = document.getElementsByClassName('an');// Referenz für laufenden anderen Redner
+							[...anderer].forEach(element => { element.click(); element.setAttribute("class", "annicht");}) // Anderen Redner stoppen
+							timer.start(); // Zustand auf start setzen
+							toggle.setAttribute("class", "an");//Attribute setzen
+							toggle.innerHTML = `Stopp!`; //In HTML Stopp als möglichen nächsten Zustand anzeigen
+						}
+					};
+					input.value = ''; //Eingabefeld zurücksetzen
+					input.focus(); //Eingabefeld in Eingabefokus setzen
+				}
+			};
+			function Timer(name) { // Timer
+				var zeit=0; // Startzeit = 00:00:00
+				var redner=name; //Eingegebener Rednername
+				var alteZeit=0; //alte Zeit ist auch 00:00:00
+				var interval=null; //interval=null
+				var an=false; //Timer zustand: stopp
+				const nullHinzufügen=function(i){ //Einheitliches Aussehen der Zeit-Anzeige
+					if(i<10){
+						i="0"+i;
+					};
+					return i;
+				}
+				const zeitrechner=function(ms) {
+					var sec=ms/1000; //Sekunden definieren
+					var h=parseInt(sec/3600); //Stunden definieren
+					var sec=sec%3600; //Sekunden definieren
+					var m=parseInt(sec/60); // Minuten definieren
+					var sec=parseInt(sec%60); //Sekunden definieren
+					return "" + nullHinzufügen(h) + ":" + nullHinzufügen(m) + ":" + nullHinzufügen(sec); //Einheitliche Anzeige
+				}
+				const berechneNeueZeit=function() { //neue Zeit berechnen
+					zeit += berechneAlteZeit();
+				}
+				const berechneAlteZeit=function() { // alte Zeit berechnen
+					var vergangeneZeit=Date.now()-alteZeit;
+					alteZeit=Date.now();
+					return vergangeneZeit;
+				}
+				const start=function() { // Hilfsmethode Start
+					interval=setInterval(()=>berechneNeueZeit()); //interval berechnen
+					alteZeit=Date.now(); //Zeit zwischenspeichern
+					an=true; //Timer starten
+				}
+				const stop=function() { // Hilfsmethode stop
+					clearInterval(interval); //interval zurücksetzen
+					an=false; //timer stoppen
+				}
+				const getRedner=function() { //Hilfsmethode für
+					return redner; // den Redner
+				}
+				const getZeit=function(){ // Hilfsmethode für 
+					return zeitrechner(zeit); //die aktuelle Zeit
+				}
+				const timerAn=function() { //Hilfsmethode für 
+					return an; //den Zustand "Timer ist an"
+				}
+				return {
+					start, stop, getRedner, getZeit, timerAn // alles zurückgeben
+				};
+			};
+		</script>
+	</body>
+</html>

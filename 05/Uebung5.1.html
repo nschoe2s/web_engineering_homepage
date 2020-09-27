@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml5.1</title>
+	</head>
+	<body>
+		<h1>Einkaufsliste</h1>
+		<label for="eingabe">Enter a new item: </label>
+		<input id="eingabe" value="" type="text">
+		<button id="mehr">Add item</button>
+		<ul id="eintraege"></ul>
+		<script>		
+			/* Implementieren Sie die interaktive Anwendung "Einkaufsliste" selbstständig in JavaScript
+			durch Nutzung der DOM API. Jeder Punkt auf der Einkaufsliste soll sich indiviiduell löschen lassen.
+			Suchen Sie eine möglichst kurze und elegante Lösung. */
+			const ul = document.querySelector('ul'); //Referenz für die Einkaufsliste (auf output-Element mit querySelector zugreifen)
+			const input = document.querySelector('input'); // Referenz für das Eingabefeld (auf output-Element mit querySelector zugreifen)
+			const button = document.querySelector('button'); //Referenz für den Eingabebutton (auf output-Element mit querySelector zugreifen)
+			button.onclick = function() {
+				if (input.value!="") { // Leere Listeneinträge vermeiden
+					const listItem = document.createElement('li'); //Einzelne Listenpunkte erstellen
+					listItem.innerHTML = `${input.value} <button>Delete</button>`; // Das HTML Element aus der Eingabe mit einem Delete-Button erzeugen
+					const delete_button = listItem.querySelector('button'); // Referenz für den Delete-Button (auf output-Element mit querySelector zugreifen)
+					delete_button.onclick = () => ul.removeChild(listItem); //Aktion für Button angeben
+					ul.appendChild(listItem); //erzeugtes HTML Element in den DOM-Baum einfügen
+					input.value = ''; //Eingabefeld zurücksetzen
+					input.focus(); //Eingabefeld in Eingabefokus setzen
+				}
+			}
+			
+      </script>
+  </body>
+</html>

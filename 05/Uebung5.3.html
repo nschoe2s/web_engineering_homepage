@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml5.3</title>
+		<style>
+			table, th, td {
+				border: 1PX solid;
+			}
+			table {
+				border-collapse: collapse;
+			}
+			button{
+				font-size:15px;
+				background-color:white;
+				border-radius: 0.2em;				
+			}
+			h1{
+				font-size:25px;
+			}
+			#innerHTML{
+				color:white;
+			}
+			#innerText{
+				color:white;
+			}
+			#textContent{
+				color:white;
+			}
+			#outerHTML{
+				color:white;
+			}
+			</style>
+	</head>
+	<body>
+		<br>
+		<h1>Text für die Performancemessung:</h1>
+			<label for "texteingabe"></label>
+			<input id="texteingabe" value="" type="text">		
+			<br>
+			<div id="outerHTML"></div>
+			<br><br>
+			<button id="textfeld"> Performancemessung starten</button>
+			<button onClick="window.location.reload();">Neue Performancemessung</button>
+		<br>
+		<br>	
+		<div>
+			<table>
+				<tr>
+					<th>innerHTML</th>
+					<th>innerText</th>
+					<th>textContent</th>
+					<th>outerHTML</th>
+				</tr>
+				<tr>
+					<td id="innerHTMLErgebnisse"></td>
+					<td id="innerTextErgebnisse"></td>
+					<td id="textContentErgebnisse"></td>
+					<td id="outerHTMLErgebnisse"></td>
+				</tr>
+			</table>
+    </div>
+	<h1>
+	</h1>
+    <div id="innerHTML"></div>
+    <div id="innerText"></div>
+    <div id="textContent"></div>
+    <script>
+		document.querySelector('#textfeld').onclick = function () {
+			const text = document.querySelector("#texteingabe").value;; //Text festlegen
+			const startzeit = performance.now(); // Zeitmessfunktion starten
+		
+			//Performancemessung innerHTML
+			const innerHTMLMessung = document.getElementById("innerHTML"); //Referenz für innerHTML (auf Element mit der ID 'innerHTML' mit getElementByID zugreifen)
+			innerHTMLMessung.innerHTML = text; //Zu messender Text und innerHTML wählen
+			const zeitmessung = performance.now() - startzeit; // Zeitmessfunktion beenden
+			document.getElementById("innerHTMLErgebnisse").innerText = zeitmessung; //Ergebnisse ausgeben	
+			
+			//Performancemessung innerText
+			const innerTextMessung = document.getElementById("innerText"); //Referenz für innerText (auf Element mit der ID 'innerText' mit getElementByID zugreifen)
+			innerTextMessung.innerText = text; //Zu messender Text und innerText wählen
+			const zeitmessungInnerText = performance.now() - startzeit; // Zeitmessfunktion beenden
+			document.getElementById("innerTextErgebnisse").innerText = zeitmessungInnerText; //Ergebnisse ausgeben	
+		
+			//Performancemessung textContent
+			const textContentMessung = document.getElementById("textContent"); //Referenz für textContent (auf Element mit der ID 'textContent' mit getElementByID zugreifen)
+			textContentMessung.textContent = text; //Zu messender Text und textContent wählen
+			const zeitmessungtextContent = performance.now() - startzeit; // Zeitmessfunktion beenden
+			document.getElementById("textContentErgebnisse").innerText = zeitmessungtextContent; //Ergebnisse ausgeben	
+		
+			//Performancemessung outerHTML
+			const outerHTMLMessung = document.getElementById("outerHTML"); //Referenz für outerHTML (auf Element mit der ID 'outerHTML' mit getElementByID zugreifen)
+			outerHTMLMessung.outerHTML = text; //Zu messender Text und outerHTML wählen
+			const zeitmessungouterHTML = performance.now() - startzeit; // Zeitmessfunktion beenden
+			document.getElementById("outerHTMLErgebnisse").innerText = zeitmessungouterHTML; //Ergebnisse ausgeben	
+			texteingabe.value = ''; //Eingabefeld zurücksetzen
+			texteingabe.focus(); //Eingabefeld in Eingabefokus setzen
+			
+			document.querySelector('#textfeld').onclick="window.location.reload();" // Erneute Eingabe vermeiden
+		}
+    </script>
+</body>
+</html>

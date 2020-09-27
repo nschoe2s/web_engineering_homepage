@@ -4,38 +4,47 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>&Uuml2.3</title>
+	<!-- Gegeben ist folgendes HTML-Wireframe: -->
+	<!-- https://kaul.inf.h-brs.de/data/2019/img/survey.png -->
+	<!-- Mit welchem HTML-Code (ohne CSS, nur mit HTML-Tags) kann man diesen Wireframe exakt nachbilden? -->
     <style>
-		body{
-		
+		/* Kein Rand */
+		body{		
 			margin:0;
 		}
+		/* Blauer Hintergrund */
     	#box1 {
 			text-align: center;
 			font-family: trebuchet ms;
 			background-color: #b2d6d1; 
 			padding: 5%;
 			font-size: 14pt;
-        }
+        }		
+		/* Weißer innerer Kasten*/
         #box2 {
 			background-color: rgb(245,245,245);
 			padding: 2%;
 			border-top-left-radius: 3px; 
 			border-top-right-radius: 3px;  
-		}
-        form{
-			height: 100%;
-        }
+		}		
+		/* Fragestellung rechtsbündig */
         .left {
 			text-align: right;
         }
+		/* Antwort linksbündig */
         .right {
 			text-align: left;
-        }    
+        }		
+		/* zwei gleich große Spalten */ 
 		td {
             vertical-align: top;
             width: 50%;
             padding: 2%;
-        }
+        } 	
+		/* Anpassung der Tabelle und der verschiedenen Antwortbereiche sodass sie so aussehen wie auf dem Bild*/
+		table {
+			margin: auto;
+        } 			
         input[type="radio"], input[type="checkbox"] {
 			margin-bottom: 3%;
         }
@@ -47,55 +56,79 @@
         input {
 			font-size: 11pt;
         }
-
         select {
 			font-size: 11pt;
 			padding: 1%;
 			width: 48%;
 			background-color:rgb(230,230,230);
         }
-		table {
-			margin: auto;
-        }
     </style>
 </head>
 
 <body>
+	<!-- Blauer Hintergrund -->
     <div id="box1">
+		<!-- Überschrift -->
         <h1>Survey Form</h1>
+		<!-- weißer innerer Kasten-->
         <div id="box2">
+			<!--Überschrift-->
             <p>Let us know how we can improve freeCodeCamp</p>
             <form>
                 <table>
+					<!--1. Zeile -->
                     <tr>
+						<!--1. Spalte-->
                         <td class="left">
+							<!--Fragestellung-->
                         	<a>* Name:</a>
-                        </td>
+                        </td>						
+						<!--2. Spalte-->
                         <td class="right">
+							<!--Antwort-->
+							<!--Eingabefeld-->
                         	<input form="text" class="right" placeholder="Enter your name">
                         </td>
                     </tr>
+					<!--2. Zeile -->
                     <tr>
+						<!--1. Spalte-->
                         <td class="left">
+							<!--Fragestellung-->
                         	<a>* Email:</a>
                         </td>
+						<!--2. Spalte-->
                         <td class="right" >
+							<!--Antwort-->
+							<!--Eingabefeld-->
                         	<input form="Email" placeholder="Enter your Email">
                         </td>
                     </tr>
+					<!--3. Zeile -->
                     <tr>
+						<!--1. Spalte-->
                         <td class="left">
+							<!--Fragestellung-->
                         	<a>* Age:</a>
                         </td>
+						<!--2. Spalte-->
                         <td input class="right" >
+							<!--Antwort-->
+							<!--Eingabefeld-->
                         	<input form="number" placeholder="Age">
                         </td>
                     </tr>
+					<!--4. Zeile -->
                     <tr>
+						<!--1. Spalte-->
                         <td class="left">
+							<!--Fragestellung-->
                         	<a>Which option describes your current role?</a>
                         </td>
+						<!--2. Spalte-->
                         <td class="right" >
+							<!--Antwort-->
+							<!--Ausklappbare Antwortmöglichkeit-->
                         	<select name="role" id="role">
                             	<option value="Option 1">
                                 	<a>Student</a>
@@ -106,13 +139,19 @@
                             </select>
                         </td>
                     </tr>
+					<!--5. Zeile -->
                     <tr>
+						<!--1. Spalte-->
                         <td class="left">
+							<!--Fragestellung-->
                             <a>* How likley is that you would recommend</a>
                             <br>
                             <a>freeCodeCamp to a friend?</a>
                         </td>
+						<!--2. Spalte-->
                         <td class="right"> 
+							<!--Antwort-->
+							<!--Ankreuzung mit nur einer Möglichkeit: Ratio-->
                         	<input type="radio" name="radio1">
                             <a>Definitely</a>
                             <br>
@@ -124,11 +163,17 @@
                             <br>
                         </td>
                     </tr>
+					<!--6. Zeile -->
                     <tr>
+						<!--1. Spalte-->
                         <td class="left">
+							<!--Fragestellung-->
                         	<a>What do you like most in FCC:</a>
                         </td>
+						<!--2. Spalte-->
                         <td class="right">
+							<!--Antwort-->
+							<!--Ausklappbare Antwortmöglichkeit-->
                         	<select name="option" id="option">
                             	<option value="Option 1">
                             		<a>Select an option</a>
@@ -138,14 +183,19 @@
                                 </option>
                             </select></td>
                     </tr>
-
+					<!--7. Zeile -->
                     <tr>
+						<!--1. Spalte-->
                         <td class="left">
+							<!--Fragestellung-->
                         	<a>Things that schould be improved in the future</a>
                             <br>
                             <a>(Check all that apply)</a>
                         </td>
+						<!--2. Spalte-->
                         <td class="right" >
+							<!--Antwort-->
+							<!--Ankreuzung mit mehreren Möglichkeiten: Checkbox-->
                         	<input type="checkbox" name="check"> 
                             <a>Front-end Projects </a>
                             <br>

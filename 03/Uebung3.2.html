@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml3.2</title>
+		<!-- Implementieren Sie ausschließlich mit HTML und CSS folgendes responsive Webdesign mit Flexbox-Layout Mobile First: -->
+		<!-- https://kaul.inf.h-brs.de/data/2019/img/holy-grail1.png -->
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			/* Alle 4 Bereiche */
+			#flex-container {
+				display: flex;
+				flex-wrap: wrap;       
+			}    
+			/* Roter Bereich Mobile First */
+			#rot {
+				background-color: red;
+				width: 100%;
+				height: 25vh;
+				border: 5px solid white;
+			}    
+			/* Grüner Bereich Mobile First */
+			#gruen {
+				background-color: lime;
+				width: 100%;
+				height: 25vh;
+				border: 5px solid white;
+			}    
+			/* Blauer Bereich Mobile First */
+			#blau {
+				background-color: blue;
+				width: 100%;
+				height: 100vh;
+				border: 5px solid white;
+			}	  
+			/* Pinker Bereich Mobile First */  
+			#pink {
+				background-color: violet;
+				width: 100%;
+				height: 25vh;
+				border: 5px solid white;
+			}    
+			/* Bildschirm wird vergrößert */
+			@media screen and (min-width: 300px) {
+				#rot{
+					width: 100%;
+					height: 25vh;        
+				}
+				#gruen {
+					width: 30%;
+					height: 100vh;
+				}
+				#blau {
+					width: 70%;
+					heigth:100vh;
+				}
+				#pink {
+					width: 100%;
+					height: 25vh;
+				}
+			}    
+			/* Bildschirm wird zu Desktop-Größe */
+			@media screen and (min-width: 600px) {
+				#rot {
+					width: 100%;
+					height: 25vh;
+				}
+				#gruen {
+					width: 20%;
+					height: 100vh;
+				}
+				#blau {
+					width: 60%;
+					height: 100vh;
+				}
+				#pink {
+					width: 20%;
+					height: 100vh;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="flex-container">
+			<div id="rot">
+			</div>
+			<div id="gruen">
+			</div>
+			<div id="blau">
+			</div>
+			<div id="pink">
+			</div>
+		</div>
+	</body>
+</html>

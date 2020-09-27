@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml3.4</title>
+		<!-- Implementieren Sie ausschließlich mit HTML und CSS folgendes responsive Webdesign mit Grid Layout Mobile-First. -->
+		<!-- https://kaul.inf.h-brs.de/data/2019/img/holy-grail1.png -->		
+		<style>
+			* {
+				box-sizing: border-box;
+			}    
+			/* Alle 4 Bereiche Mobile First */
+			#grid-container {
+				display: grid;
+				height: 100vh;
+				grid-template-columns: 1fr;
+				grid-template-rows: 1fr 1fr 4fr 1fr;
+				grid-template-areas: "redarea redarea redarea" "greenarea greenarea greenarea" "bluearea bluearea bluearea" "pinkarea pinkarea pinkarea";
+			}    
+			/* Roter Bereich Mobile First */
+			#rot {
+				background-color: red;
+				grid-area: redarea;
+				border: 5px solid white;
+			}  
+			/* Grüner Bereich Mobile First */  
+			#gruen {
+				background-color: lime;
+				grid-area: greenarea;
+				border: 5px solid white;
+			}  
+			/* Blauer Bereich Mobile First */  
+			#blau {
+				background-color: blue;
+				grid-area: bluearea;
+				border: 5px solid white;
+			}    
+			/* Pinker Bereich Mobile First */  
+			#pink{
+				background-color: violet;
+				grid-area: pinkarea;
+				border: 5px solid white;
+			}    
+			/* Bildschirm wird vergrößert */
+			@media screen and (min-width: 300px) {
+				#grid-container {
+					height: 100vh;
+					grid-template-columns:  1fr 2fr;
+					grid-template-rows: 1fr 3fr 1fr;
+					grid-template-areas: "redarea redarea redarea" "greenarea bluearea bluearea" "pinkarea pinkarea pinkarea";
+				}
+			}    
+			/* Bildschirm wird zu Desktop-Größe */
+			@media screen and (min-width: 600px) {
+				#grid-container {
+					height: 100vh;
+					grid-template-columns: 1fr 3fr 1fr;
+					grid-template-rows: 1fr 2fr 1fr;
+					grid-template-areas: "redarea redarea redarea" "greenarea bluearea pinkarea" "greenarea bluearea pinkarea";
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="grid-container">
+			<div id="rot">
+			</div>
+			<div id="gruen">
+			</div>
+			<div id="blau">
+			</div>
+			<div id="pink">
+			</div>
+		</div>
+	</body>
+</html>
