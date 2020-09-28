@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml7.1</title>	
+	</head>
+	<body>	
+		<script type="module">
+			/* Schreiben Sie mit LitElement einen Counter, der bei jedem Klick hochgezählt wird. */
+			/* Über je ein Attribut soll man den Startwert des Counters und den Höchstwert (Limit) setzen können. */ 
+			/* Wenn das Limit erreicht ist, soll der Counter stattdessen kurz rot aufleuchten. */
+			import { LitElement, html, css } from "https://unpkg.com/lit-element/lit-element.js?module"; //LilElement Basisklasse, html und css importieren
+			class CounterElement extends LitElement { //Counter-Klasse erzeugen
+				static get properties(){ //Attribute anlegen
+					return{
+						aktuellerwert:{type: Number},// Attribut für aktuellen Wert anlegen
+						startwert:{type: Number},// Attribut für Startwert anlegen
+						hoechstwert:{type: Number},// Attribut für Höchstwert anlegen
+						restlicheclicks:{type: Number},// Attribut für restliche clicks anlegen
+						anzahl:{type: Number},//Attribut für die Klick-Anzahl
+						anfang:{type: String},// Attribut für Anfangsnachricht anlegen
+						mitte:{type: String},// Attribut für mittige Nachricht anlegen
+						ende:{type: String}// Attribut für letzte Nachricht anlegen
+					};
+				}
+				constructor() {
+					super(); // von LilElement
+					this.aktuellerwert = ""; //Kein voreingestellter aktueller Wert
+					this.startwert = "";//Kein voreingestellter Startwert
+					this.hoechstwert = "";//Kein voreingestellter Höchstwert
+					this.restlicheclicks='';//Keine voreingestellten restlichen Klicks
+					this.anzahl='';//Keine voreingestellte Anazahl
+				}
+				startwerteingabe(eingabeStartwert) { //Startwerteingabe verarbeiten
+					this.startwert = parseInt(eingabeStartwert.target.value); // Übergebenen Startwert als Startwert festlegen
+					this.aktuellerwert = this.startwert; // Aktueller Wert ist der Startwert
+				}
+				hoechstwerteingabe(eingabeHöchstwert) { //Höchstwerteingabe verarbeiten
+					this.hoechstwert = parseInt(eingabeHöchstwert.target.value);// Übergebenen Höchstwert als Startwert festlegen
+					this.restlicheclicks=this.hoechstwert-this.startwert;
+				}
+				counter() {
+					if(this.aktuellerwert < this.hoechstwert) { // Bis zum Höchstwert
+						this.anfang=''; //Anfangsnachricht löschen
+						this.ende='';//Letzte Nachricht löschen					
+						++this.aktuellerwert; // Count Hochzählen
+						--this.restlicheclicks; // Restliche Clicks Runterzählen
+						++this.anzahl;
+						this.mitte = `Es kann noch ${this.restlicheclicks} mal geklickt werden.`; // mittlere Nachricht setzen
+					}	
+					else if (this.startwert>this.hoechstwert){
+						this.anfang = `Bitte Höchstwert eingeben, der größer ist als der Startwert.`;	//Anfangsnachricht setzen					
+						this.mitte=''; // mittlere Nachricht löschen
+						this.ende=''; // Letzte Nachricht löschen
+					}
+					else if (this.hoechstwert==''){ // Höchstwert noch nicht eingegeben
+						this.anfang = `Bitte Höchstwert eingeben.`;	//Anfangsnachricht setzen					
+						this.mitte=''; // mittlere Nachricht löschen
+						this.ende=''; // Letzte Nachricht löschen
+					}
+					else if(this.aktuellerwert==this.hoechstwert){ // Höchstwert erreicht
+						this.ende = `Höchstwert wurde erreicht. Es wurde ${this.anzahl} mal geklickt.`; //Letzte Nachricht setzen
+						this.anfang='';//Anfangsnachricht löschen
+						this.mitte='';// mittlere Nachricht löschen
+					}
+				}
+				render() {
+					return html`
+					<h1>Counter: ${this.aktuellerwert}</h1> 
+					<a>${this.anfang}${this.mitte}${this.ende}</a> 
+					<br><br>
+					<label>Startwert: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<input id="startwert" .value=${this.startwert} @input=${this.startwerteingabe} type="number" min="0">
+					<br>
+					<label>H&oumlchstwert:&nbsp;</label>
+					<input id="hoechstwert" .value=${this.hoechstwert} @input=${this.hoechstwerteingabe} type="number"min="0">
+					<br><br>
+					<button @click="${this.counter}">Count</button>					
+					`;
+				}
+			}
+			customElements.define("counter-element", CounterElement);
+		</script>
+		<counter-element>
+			Counter-Element
+		</counter-element>
+	</body>
+</html>

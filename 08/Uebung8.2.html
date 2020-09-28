@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml8.2</title>
+		<!-- Implementieren Sie ein Balkendiagramm mit Inline SVG und LitElement. -->
+		<!-- Geben Sie die Daten für das Balkendiagramm im JSON-Format vor. -->
+		<!-- Animieren Sie die Grafik wie z.B. in Bar Chart. -->
+		<style>
+			*{
+				font-family: trebuchet ms;
+			}
+			h1,p{
+				text-align: center;
+			}
+
+		</style>
+	</head>
+	<body>
+		<!--Überschrift-->
+		<h1>
+		  Historic World Population by Region
+		</h1>
+		<p>
+		<!--Quellenangabe-->
+		  Source: Wikipedia.org
+		</p>
+		<br><br>
+		<script type="module">
+			import { LitElement, svg, css } from 'https://unpkg.com/lit-element/lit-element.js?module';//LilElement Basisklasse, html und css importieren
+			customElements.define("balken-diagramm", class extends LitElement{ // benutzerdefiniertes Element erzeugen
+				render(){
+					return svg`
+						<svg id="svg" width="1400" height="600">
+						
+							//Skalierungslinien mit Beschriftung anlegen
+							<g id="skalierungslinie 0" > 
+								<line x1="200" y1="0" x2="200" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="195" y="320">0</text>
+							</g>
+							<g id="skalierungslinie 500" >
+								<line x1="300" y1="0" x2="300" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="285" y="320">500</text>
+							</g>						
+							<g id="skalierungslinie 1000" >								
+								<line x1="400" y1="0" x2="400" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="381" y="320">1000</text>
+							</g>						
+							<g id="skalierungslinie 1500" >
+								<line x1="500" y1="0" x2="500" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="481" y="320">1500</text>
+							</g>						
+							<g id="skalierungslinie 2000" >
+								<line x1="600" y1="0" x2="600" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="581" y="320">2000</text>
+							</g>						
+							<g id="skalierungslinie 2500" >
+								<line x1="700" y1="0" x2="700" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="681" y="320">2500</text>
+							</g>						
+							<g id="skalierungslinie 3000" >
+								<line x1="800" y1="0" x2="800" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="781" y="320">3000</text>
+							</g>						
+							<g id="skalierungslinie 3500" >
+								<line x1="900" y1="0" x2="900" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="881" y="320">3500</text>
+							</g>						
+							<g id="skalierungslinie 4000" >
+								<line x1="1000" y1="0" x2="1000" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="981" y="320">4000</text>
+							</g>						
+							<g id="skalierungslinie 4500" >
+								<line x1="1100" y1="0" x2="1100" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="1081" y="320">4500</text>
+							</g>					
+							<g id="skalierungslinie 5000" >
+								<line x1="1200" y1="0" x2="1200" y2="300" stroke="rgb(218,218,218)"/>
+								<text x="1170" y="320">5000</text>
+							</g>
+							
+							// X-Beschriftung
+							<text x="1065" y="350">Population (millions)</text>
+						</svg>
+					` 
+				}
+				//Attribute anlegen
+				static get properties(){ 
+					return{
+						kontinente:{ //Attribut für die Kontinente
+							tpye: Object
+						},
+						jahr1800:{ //Attribut für das Jahr 1800
+							tpye: Object
+						},
+						jahr1900:{//Attribut für das Jahr 1900
+							tpye: Object
+						},
+						jahr2000:{//Attribut für das Jahr 2000
+							tpye: Object
+						},
+						jahr2016:{//Attribut für das Jahr 2016
+							tpye: Object
+						},
+						ybalken:{//Attribut für die y-Achsenposition der Balken
+							type: Number
+						},
+						ykontinente:{//Attribut für die Y-Achsenposition der Kontinente
+							type: Number
+						},
+						svg:{//Attribut für svg
+							type: Object
+						}
+					}
+				}
+				//Style für das benutzerdefinierte Element anlegen: Beschriftung und Animation der Balken
+				static get styles(){
+					return css`
+						#rectNewBeschriftung{
+							font-size:8px;
+							font-weight: bold;
+						}
+						#rectNewBalken{
+							animation: transition 1s;
+						}    
+						@keyframes transition{
+							from{width: 0%};
+							to{width: 100%};
+						}        
+					`
+				}
+				// Erzeugungswerte festlegen
+				constructor(){
+					super();
+					this.ybalken = 10;
+					this.ykontinente = 30;
+					this.kontinente = JSON.parse('{"Africa":0,"America":0,"Asia":0,"Europe":0,"Oceania":0}');
+					this.jahr1800 = JSON.parse('{"Africa":107,"America":31,"Asia":635,"Europe":203,"Oceania":0}');
+					this.jahr1900 = JSON.parse('{"Africa":133,"America":156,"Asia":947,"Europe":408,"Oceania":6}');
+					this.jahr2000 = JSON.parse('{"Africa":481,"America":841,"Asia":3714,"Europe":738,"Oceania":0}');
+					this.jahr2016 = JSON.parse('{"Africa":1216,"America":1001,"Asia":4436,"Europe":738,"Oceania":40}');
+				}				
+				firstUpdated() { // Methode, um die Balken zu erzeugen und einmalig zu animieren
+					this.svg = this.shadowRoot.getElementById("svg");					
+					// Von Anfang bis Ende alle Kontinente durchgehen
+					var länder = [];
+					for(var l in this.kontinente) länder.push(l); 
+					länder.forEach(element => {
+						//Kontinent erstellen
+						// In SVG würde das so aussehen: <text x="100" y="this.yKontinente">${this.element}</text>
+						var textNewKontinent = document.createElementNS("http://www.w3.org/2000/svg","text");
+						textNewKontinent.setAttributeNS(null,"x",100);
+						textNewKontinent.setAttributeNS(null,"y",this.ykontinente);
+						textNewKontinent.textContent = element; 					
+						this.svg.appendChild(textNewKontinent);//erzeugtes Element in den DOM-Baum einfügen
+						this.ykontinente += 60;	//Mit Erhöhung der Y-Achsenposition der Kontinente nächsten Kontinent weiter runter setzen
+						
+						//Für jeden Kontinent 4 Balken und deren Beschriftung erstellen
+						for(var i =0; i<5; i++){						
+							// In SVG würde zb der erste Balken so aussehen: <rect id="rectNewBalken" x="200" y="${this.ybalken}" heigth="5" width="${this.jahr1800[""+element]/5}" fill="rgb(124,181,236)"></rect>
+							// In SVG würde zb die Beschriftung des ersten Balkens so aussehen: <text id="rectNewBeschriftung" x="${(this.jahr1800[""+element]/5)+205}" y="${this.ybalken+5}">${this.jahr1800[""+element]}</text>
+							var rectNewBalken = document.createElementNS("http://www.w3.org/2000/svg","rect"); rectNewBalken.setAttributeNS(null,"id","rectNewBalken"); rectNewBalken.setAttributeNS(null,"x",200); rectNewBalken.setAttributeNS(null,"y",this.ybalken); rectNewBalken.setAttributeNS(null,"height",5);
+							var rectNewBeschriftung = document.createElementNS("http://www.w3.org/2000/svg","text"); rectNewBeschriftung.setAttributeNS(null,"id","rectNewBeschriftung"); rectNewBeschriftung.setAttributeNS(null,"y",this.ybalken+5);
+							
+							// Individuelle Anpassung für den oberen Balken vom Jahr 1800
+							if(i==0){ 
+								rectNewBalken.setAttributeNS(null,"width",this.jahr1800[""+element]/5); rectNewBalken.setAttributeNS(null,"fill","rgb(124,181,236)");								
+								rectNewBeschriftung.textContent = this.jahr1800[""+element]; rectNewBeschriftung.setAttributeNS(null,"x",(this.jahr1800[""+element]/5)+205);
+							}	
+							// Individuelle Anpassung für den zweiten Balken von oberen vom Jahr 1900							
+							if(i==1){
+								rectNewBalken.setAttributeNS(null,"width",this.jahr1900[""+element]/5);	rectNewBalken.setAttributeNS(null,"fill","rgb(67,67,72)");								
+								rectNewBeschriftung.textContent = this.jahr1900[""+element]; rectNewBeschriftung.setAttributeNS(null,"x",(this.jahr1900[""+element]/5)+205);
+							}	
+							// Individuelle Anpassung für den zweiten Balken von unten vom Jahr 2000
+							if(i==2){
+								rectNewBalken.setAttributeNS(null,"width",this.jahr2000[""+element]/5);	rectNewBalken.setAttributeNS(null,"fill","rgb(144,237,125)");								
+								rectNewBeschriftung.textContent = this.jahr2000[""+element]; rectNewBeschriftung.setAttributeNS(null,"x",(this.jahr2000[""+element]/5)+205);
+							}
+							// Individuelle Anpassung für den unteren Balken vom Jahr 2016
+							if(i==3){
+								rectNewBalken.setAttributeNS(null,"width",this.jahr2016[""+element]/5); rectNewBalken.setAttributeNS(null,"fill","rgb(247,163,92)");								
+								rectNewBeschriftung.textContent = this.jahr2016[""+element]; rectNewBeschriftung.setAttributeNS(null,"x",(this.jahr2016[""+element]/5)+205);
+							}
+							this.svg.appendChild(rectNewBalken);//erzeugtes Element in den DOM-Baum einfügen							
+							this.svg.appendChild(rectNewBeschriftung);//erzeugtes Element in den DOM-Baum einfügen
+							this.ybalken += 7; // Mit Erhöhung der Y-Achsenposition der Balken nächsten Balken weiter runter setzen 
+						}						
+						this.ybalken += 32;	// 60-7-7-7-7
+					});
+				}
+			})
+		</script>
+		<balken-diagramm></balken-diagramm>
+	</body>
+</html>

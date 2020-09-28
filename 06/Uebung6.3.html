@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml6.3</title>
+		<!-- Schreiben Sie einen Navigator für die Fachbegriffe des WWW zu den Oberthemen HTML, CSS und JavaScript. Im Hauptmenü sollen diese 3 Oberthemen zur Auswahl stehen. Im Untermenü soll eine zugehörige Liste von Fachbegriffen zum jeweiligen ausgewählten Oberthema stehen. In der Mitte soll eine Dokumentation zum ausgewählten Fachbegriff erscheinen mit Hyperlinks zu den anderen Fachbegriffen. Wird auf einen solchen Hyperlink geklickt, so sollen sich auch die beiden Menüs anpassen. Mit einem Button soll ein Zurücksprung möglich sein.-->
+		<!-- Schreiben Sie in HTML und CSS nur den Rahmen für einen solchen WWW-Navigator. Dabei können Sie auch ein schöneres Layout selbst erstellen. Die Inhalte sollen in einer JSON-Datei extern gelagert werden. Mit der fetch-API soll die JSON-Datei asynchron nicht-blockierend geladen werden. Sobald die Inhalte angekommen sind, sollen sie im Browser auch angezeigt werden.-->
+		<!-- Fügen Sie in die JSON-Datei Inhalte zu einigen Themen als Strings beispielhaft ein. Wenn Sie Inhalte aus fremden Quellen kopieren, so schreiben Sie bitte stets die Quelle als externe Ressource hinzu. Diese soll dann auf der rechten Seite im WWW-Navigator erscheinen. -->
+		<style>
+			<!---->
+			* {
+				font-family: trebuchet ms;
+				box-sizing: border-box;
+				margin:0;
+			}
+			.box {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			<!--Header oben-->
+			#header {
+				background-color: rgb(180,86,83);
+				width: 100%;
+			}
+			<!--Menüleiste links-->
+			#menüleiste {
+				background-color: rgb(185,133,132);
+				width: 20%;
+				height: 80vh;
+			}
+			<!--Inhalt mittig-->
+			#inhalt {
+				background-color: rgb(162,208,240);
+				width: 60%;
+				height: 80vh;
+				overflow: auto;
+			}
+			<!--Quellen rechts-->
+			#links {
+				background-color: rgb(185,133,132);
+				width: 20%;
+				height: 80vh;
+				word-break: break-all;
+			}
+			h1 {
+				text-align:center;
+				color:white;
+				font-size:50px;
+			}
+			button{
+				background-color:rgb(107,112,156);
+				border-radius: 40px;
+				border: 2px #dddddd outset;
+				width:150px;
+				height:30px;
+				margin-top:10px;
+				margin-left:10px;
+				margin-bottom:10px;
+			}
+			button:hover {
+				background-color:rgb(224,220,218);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<!--Header oben-->
+			<div id="header">
+				<h1>WWW-Navigator</h1>
+				<div class="buttons"> 
+					<!-- Beim Klicken sollen die Inhalte geladen werden-->
+					<button id="html" onclick="ladeSeite('html')">HTML</button>
+					<button id="css" onclick="ladeSeite('css')">CSS</button>
+					<button id="javascript" onclick="ladeSeite('javascript')">JavaScript</button>
+				</div>
+			</div>
+			<!--Menüleiste linka->
+			<div id="menüleiste"></div>
+			<!--Content mittig -->
+			<div id="inhalt"></div>
+			<!--Links rechts-->
+			<div id="links"></div>
+		</div>
+		<script>
+			const menüleiste = document.getElementById('menüleiste');//Element wird über seine ID 'id' angesprochen
+			const inhalt = document.getElementById('inhalt');//Element wird über seine ID 'id' angesprochen
+			const links = document.getElementById('links');//Element wird über seine ID 'id' angesprochen
+			let jsonDateiInhalt = 0; //Hilfsvariable JSON-Datei-Inhalt
+			let webseite = 0; //Hilfsvariable für die webseite
+			jsonDateiLaden().then(value => { //Inhalt aus der JSON-Datei laden 
+				jsonDateiInhalt = value;
+			});
+			async function jsonDateiLaden() { //Inhalt aus der JSON-Datei laden
+				const response = await fetch("Uebung6.3.json"); // Welche Datei
+				const jsonDateiInhalt = await response.json(); //Inhalt in const speichern
+				return jsonDateiInhalt; //Inhalt zurückgeben
+			}			
+			function menüleisteErstellen(thema) { //Menüleiste erstellen
+				menüleiste.innerHTML = ""; // 
+				const menujsonDateiInhalt = jsonDateiInhalt.menues[thema];
+				for (let key in menujsonDateiInhalt) { //JSON-Datei bis zum Ende durchgehen
+					const button = document.createElement('button'); //Element wird über seine ID 'id' angesprochen
+					button.innerHTML = key;  //Key anlegen
+					button.onclick = () => berechneInhalt(key); //Inhalt für den Click berechnen
+					menüleiste.appendChild(button);//erzeugtes Element in den DOM-Baum einfügen
+				}
+			}
+			function berechneInhalt(thema) {
+				inhalt.innerHTML = `<h2>${thema}</h2>`; //Content in HTML anzeigen sobald es aus der JSON-Datei geladen wurde
+				const erstellterinhalt = document.createElement('erstellterinhalt'); //Inhalt erstellen
+				erstellterinhalt.innerHTML = webseite[thema].content; // Inhalt aus der JSON-Datei ziehen und in HTML anzeigen
+				inhalt.appendChild(erstellterinhalt); //erzeugtes Element in den DOM-Baum einfügen
+				links.innerHTML = webseite[thema].source; //Quellen aus der JSON-Datei ziehen und in HTML anzeigen
+			}
+			function ladeSeite(thema) { 
+				webseite = jsonDateiInhalt.menues[thema];
+				menüleisteErstellen(thema);
+			}
+		</script>
+	</body>
+</html>

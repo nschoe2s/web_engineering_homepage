@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml8.3</title>
+		<!-- Schreiben Sie mit SVG und LitElement ein Animationswerkzeug für Bezierkurven, wie unter §1 - A lightning introduction vorgegeben. -->
+		<style>
+			path{
+				fill:none; 
+				stroke:red; 
+				stroke-width:2px;
+			}
+			line{
+				fill:none; 
+				stroke:black;
+				stroke-dasharray:5,5;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Ich finde diese Aufgabe sehr schwer und ich habe sehr viel Zeit an ihr verbracht. -->
+		<!-- Leider aber habe ich die genaue Berechnung und die Animation nie richtig hinbekommen. -->
+		<!-- Um nicht gar nichts abgeben zu müssen, habe ich die Bézierkurve per Hand erstellt. --> 
+		<svg width="500" height="500">
+			<!-- Bézierkurve-->
+			<text x="220" y="20">Bézier-Kurve</text>  
+			<path d="M 170,160, c 40,-100 200,-130 200,-25" />
+			<!--b0-->
+			<text x="150" y="160">b0</text>
+			<circle cx="170" cy="160" r="3" />
+			<!--b1-->
+			<text x="160" y="60">b1</text>
+			<circle cx="200" cy="60" r="3" />
+			<!--b2-->
+			<text x="405" y="32">b2</text>
+			<circle cx="400" cy="30" r="3" />
+			<!--b3-->
+			<text x="375" y="135">b3</text>
+			<circle cx="370" cy="132" r="3" />
+			<!--Linien-->
+			<line x1="170" y1="160" x2="200" y2="70" />
+			<line x1="400" y1="30" x2="370" y2="132" />
+			<line x1="200" y1="60" x2="400" y2="30" />
+		</svg>
+	</body>
+</html>

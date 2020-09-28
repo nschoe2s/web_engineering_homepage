@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml7.2</title>
+	</head>
+	<body>
+		<script type="module">
+		/* Realisieren Sie mit LitElement eine Stoppuhr. /*
+		/* Die Stoppuhr soll über die Buttons Start, Stopp und Weiter gesteuert werden können. */
+		import { LitElement, html, css } from "https://unpkg.com/lit-element/lit-element.js?module";//LilElement Basisklasse, html und css importieren
+			class Stoppuhr extends LitElement { //Stoppuhr-Klasse erzeugen
+				static get properties() { //Attribute anlegen
+					return {
+						zeit:{ // Attribut für Zeit
+							type: Number
+						},
+						alteZeit:{ // Attribut für alte Zeit
+							type: Number
+						},
+						vergangeneZeit:{ // Attribut für vergangene Zeit
+							type: Number
+						},
+						interval:{ // Attribut für Interval
+							type: Object
+						},
+						an:{ // Attribut für an
+							type: Boolean
+						},
+						StoppuhrAnzeige:{ // Attribut für Stoppuhranzeige
+							type: String
+						}
+					};
+				}
+				constructor() {
+					super();             
+					this.zeit=0; // Startzeit = 00:00:00
+					this.alteZeit=0; //alte Zeit ist auch 00:00:00
+					this.interval=null; //interval leer
+					this.an=false;//Stoppuhr zustand: stopp
+					this.StoppuhrAnzeige="00:00:00:000";
+				}
+				nullHinzufügen(i){ //Einheitliches Aussehen der Zeit-Anzeige
+					if(i<10){
+						i="0"+i
+					};
+					return i;
+				}
+				zeitrechner() {
+					var ms = this.zeit; // Startzeit
+					var h = parseInt(ms / 3600000);//Stunden definieren
+					var m = parseInt(ms / 60000); // Minuten definieren
+					var sec = parseInt(ms / 1000);//Sekunden definieren
+					var ms = ms % 3600000; // Millisekunden definieren
+					var ms = parseInt(ms % 60000); // Millisekunden definieren
+					var ms = parseInt(ms % 1000); // Millisekunden definieren
+					this.StoppuhrAnzeige = this.nullHinzufügen(h) + ":" + this.nullHinzufügen(m) + ":" + this.nullHinzufügen(sec) + ":" + this.nullHinzufügen(ms); //Einheitliche Anzeige
+				}
+				zeigeAktuelleZeit() {
+					clearInterval(this.showInterval);
+					this.showInterval = setInterval(() => this.zeitrechner(),100);
+				}
+				berechneNeueZeit() { //neue Zeit berechnen
+					this.berechneAlteZeit();
+					this.zeit += this.vergangeneZeit;
+				}
+				berechneAlteZeit() { // alte Zeit berechnen
+					this.vergangeneZeit = Date.now() - this.alteZeit;
+					this.alteZeit = Date.now();
+				}
+				start() {// Hilfsmethode Start
+					this.zeit = 0;
+					clearInterval(this.interval);
+					this.weiter()
+				}
+				stop() {// Hilfsmethode stop
+					clearInterval(this.interval);
+					clearInterval(this.showInterval);
+					this.an = false;
+				}
+				weiter() { //Hilfsmethode weiter
+					this.interval = setInterval(() => this.berechneNeueZeit(),100);
+					this.alteZeit = Date.now();
+					this.an = true;
+					this.zeigeAktuelleZeit();
+				}
+				getZeit(){ // Hilfsmethode aktuelle Zeit
+					return this.zeitrechner(this.zeit);
+				}
+				stoppuhrAn(){ //Stoppuhr an
+					return this.an;
+				}
+				render() {
+					return html`
+						<h1>Stoppuhr: </h1>
+						<h3>${this.StoppuhrAnzeige}</h3>
+						<button @click="${this.start}">Start</button>
+						<button @click="${this.stop}">Stop</button>
+						<button @click="${this.weiter}">Weiter</button>
+					`;
+				}
+			}
+			customElements.define("stopp-uhr", Stoppuhr);
+		</script>
+		<stopp-uhr>
+			Stoppuhr
+		</stopp-uhr>
+	</body>
+</html>

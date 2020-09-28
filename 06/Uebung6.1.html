@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml6.1</title>
+	</head>
+	<body>
+		<p></p>   
+		<script>    
+			/* Erstellen Sie auf Ihrem Server www2.inf.h-brs.de (oder localhost) zwei Text-Dateien A.txt und B.txt mit ungefähr gleich vielen Zeilen. */
+			/* Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server. */
+			/* Geben Sie auf einer Webseite den Inhalt beider Dateien zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll. */ 
+			/* Die beiden Dateien sollen also zeilenweise konkateniert werden. */ 
+			/* Erzielen Sie max. Geschwindigkeit durch paralleles Laden. */
+			/* Verwenden Sie dabei ausschließlich die Promise API  */
+			const konkateniert = document.querySelector('p');
+			Promise.all([ // Mit der fetch-API parallel beide Text-Dateien vom Server laden
+				fetch('A.txt').then(inhalt => inhalt.text()), //Inhalt der Datei A.txt
+				fetch('B.txt').then(inhalt => inhalt.text()) //Inhalt der Datei B.txt
+			]).then(([inhaltA, inhaltB]) => { // dabei den Inhalt beider Dateien aufsplitten
+				let a=inhaltA.toString().split('\n'); //Inhalt der Datei A.txt aufsplitten
+				let b=inhaltB.toString().split('\n'); //Inhalt der Datei B.txt aufsplitten
+				return [a,b];
+			}).then(([inhaltA, inhaltB]) => { //und miteinander konkatenieren
+				let endergebnis ="";
+				if(inhaltA.length === inhaltB.length){ // Wenn A.txt und B.txt gleich viele Zeilen haben
+					for(var i=0; i<inhaltA.length; ++i){ // Schleife bis zur letzten Zeile von A.txt
+						endergebnis = endergebnis.concat(inhaltA[i], '<br>', inhaltB[i], '<br>'); //Zeilen von A.txt und B.txt abwechselnd in endergebnis abspeichern
+					}
+				}
+				if(inhaltA.length < inhaltB.length){  // Wenn A.txt weniger Zeilen hat als B.txt
+					for(var i=0; i<inhaltA.length; ++i){ // Schleife bis zur letzten Zeile von A.txt
+						endergebnis = endergebnis.concat(inhaltA[i], '<br>', inhaltB[i], '<br>'); //Zeilen von A.txt und B.txt abwechselnd in endergebnis abspeichern
+					}
+					for(var i=inhaltA.length; i<inhaltB.length; ++i){ // Schleife ab der letzten Zeile von A.txt bis zur letzten Zeile von B.txt
+						endergebnis = endergebnis.concat(inhaltB[i], '<br>'); // Die restlichen Zeilen von B.txt in endergebnis abspeichern
+					}
+				}
+				if(inhaltA.length > inhaltB.length){  // Wenn A.txt mehr Zeilen hat als B.txt
+					for(var i=0; i<inhaltB.length; ++i){ // Schleife bis zur letzten Zeile von B.txt
+						endergebnis = endergebnis.concat(inhaltA[i], '<br>', inhaltB[i], '<br>'); //Zeilen von A.txt und B.txt abwechselnd in endergebnis abspeichern
+					}
+					for(var i=inhaltB.length; i<inhaltA.length; ++i){ // Schleife ab der letzten Zeile von B.txt bis zur letzten Zeile von A.txt
+						endergebnis = endergebnis.concat(inhaltA[i], '<br>'); // Die restlichen Zeilen von A.txt in endergebnis abspeichern
+					}
+				}
+				konkateniert.innerHTML = endergebnis;//Endergebnis in HTML anzeigen
+		</script>
+	</body>
+</html>

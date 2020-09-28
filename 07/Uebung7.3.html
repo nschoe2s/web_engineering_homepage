@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml7.3</title>
+	</head>
+	<body>
+		<script type="module">
+		/*Schreiben Sie mit LitElement eine flexible Menü-Komponente, die sich sowohl für horizontale als auch für vertikale Menüs eignet, wie sie sie in Ihrem WWW-Navigator aus der letzten Woche gebrauchen könnten.*/
+		import { LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';//LilElement Basisklasse, html und css importieren
+        class flexiblesmenü extends LitElement{ //Klasse für das flexible Menü erstellen
+            static properties = {//Attribute anlegen
+                horizontalOderVertikal:{ //Attribut für die horizontalOderVertikal
+					type: String
+				}
+            }
+            static get styles() { //Mit CSS zwischen horizontal und vertikal unterscheiden
+				return css`
+					.horizontal { 
+						display: flex;
+						flex-direction: row;
+					}
+					.vertikal { 
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+					}
+					
+				`;
+			}
+            constructor(){
+                super();
+                this.horizontalOderVertikal = this.getAttribute('horizontalOderVertikal');
+            }
+            render(){
+                return html`
+					<!--durch ${this.horizontalOderVertikal} kann flexibel ausgewählt werden, ob das Menü horizontal oder vertikal sein soll.-->
+                    <div class="${this.horizontalOderVertikal}">
+						<!--Text inside of custom element (in LightDOM)-->
+						<slot></slot>
+                    </div>
+                `
+            }
+        }
+        customElements.define('flexibles-menü',flexiblesmenü)
+		</script>
+		<!--Beispiel für ein horizontales Menü-->
+			<flexibles-menü horizontalOderVertikal="horizontal">		
+				<a href="../index.html">Home </a>
+				<a href="Uebung7.html">Übung 7 </a>
+			</flexibles-menü>
+			<br>
+		<!--Beispiel für ein vertikales Menü-->
+			<flexibles-menü horizontalOderVertikal="vertikal">	
+				<a href="../index.html">Home</a>
+				<a href="Uebung7.html">Übung 7</a>
+			</flexibles-menü>
+	</body>
+</html>

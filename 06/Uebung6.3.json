@@ -1,0 +1,78 @@
+{
+  "menues": {
+    "html": {
+      "headings": {
+        "content": "HTML-Content: Headings",
+        "source": "https://www.w3schools.com/html/html_headings.asp"
+      },
+      "paragraphs": {
+        "content": "HTML-Content: Paragraphs",
+        "source": "https://www.w3schools.com/html/html_paragraphs.asp"
+      },
+      "links": {
+        "content": "HTML-Content: Links",
+        "source": "https://www.w3schools.com/html/html_links.asp"
+      },
+      "images": {
+        "content": "HTML-Content: Images",
+        "source": "https://www.w3schools.com/html/html_images.asp"
+      },
+      "tables": {
+        "content": "HTML-Content: Tables",
+        "source": "https://www.w3schools.com/html/html_tables.asp"
+      }
+    },
+    "css": {
+      "selectors": {
+        "content": "CSS-Content: Selectors",
+        "source": "https://www.w3schools.com/cssref/css_selectors.asp"
+      },
+      "colors": {
+        "content": "CSS-Content: Colors",
+        "source": "https://www.w3schools.com/cssref/css_colors.asp"
+      },
+      "boxes": {
+        "content": "CSS-Content: Boxes",
+        "source": "https://www.w3schools.com/css/css_boxmodel.asp"
+      },
+      "display": {
+        "content": "CSS-Content: Display",
+        "source": "https://www.w3schools.com/cssref/pr_class_display.asp"
+      },
+      "float": {
+        "content": "CSS-Content: Float",
+        "source": "https://www.w3schools.com/css/css_float.asp"
+      }
+    },
+    "javascript": {
+      "functions": {
+        "content": "Javascript-Content: Functions",
+        "source": "https://www.w3schools.com/js/js_functions.asp"
+      },
+      "objects": {
+        "content": "Javascript-Content: Objects",
+        "source": "https://www.w3schools.com/js/js_objects.asp"
+      },
+      "scope": {
+        "content": "Javascript-Content: Scope",
+        "source": "https://www.w3schools.com/js/js_scope.asp"
+      },
+      "events": {
+        "content": "Javascript-Content: Events",
+        "source": "https://www.w3schools.com/js/js_events.asp"
+      },
+      "hoisting": {
+        "content": "Javascript-Content: Hoisting",
+        "source": "https://www.w3schools.com/js/js_hoisting.asp"
+      },
+      "strict_mode": {
+        "content": "Javascript-Content: Strict-Mode",
+        "source": "https://wiki.selfhtml.org/wiki/JavaScript/strict_mode"
+      },
+      "JSON": {
+        "content": "Javascript-Content: JSON",
+        "source": "https://www.w3schools.com/js/js_json.asp"
+      }
+    }
+  }
+}

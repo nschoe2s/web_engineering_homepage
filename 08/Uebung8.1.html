@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml8.1</title>
+		<!--Codieren Sie eine HTML-Datei mit Inline SVG, so dass sich folgendes Aussehen ergibt:-->
+		<!--https://kaul.inf.h-brs.de/data/img/use_the_platform.png-->
+		<!--Fügen Sie als Hover-Effekt eine CSS-Animation hinzu, die die Größe der SVG-Grafik verdoppelt, wenn man mit dem Cursor über die Grafik geht.-->
+		<style>
+			/* Positionierung des pinken Kastens */
+			svg { 
+				margin-top :15px;
+				margin-left :25px;
+			}
+			/* Eigenschaften der Gruppierung der SVG-Elemente */
+			g {
+				animation-play-state: paused;
+				animation-name: größeVerdoppeln;
+				animation-timing-function: ease-in-out;
+				animation-duration: 1.5s;
+				animation-iteration-count: infinite;
+			}
+			/* Hover der Gruppierung der SVG-Elemente */
+			g:hover {
+				animation-play-state: running;
+			}
+			/* Positionierung der Schrift des pinken Kastens */
+			text {
+				font-size: 19px;
+				font-family: trebuchet ms;
+				text-anchor: start;
+				fill: white;
+			}	
+			/* Pinnken Kasten verdoppeln */
+			@keyframes größeVerdoppeln {
+				from {transform: scale(1);}
+				to {transform: scale(2);}
+			}
+		</style>
+	</head>
+	<body>
+		<!--Überschrift-->
+		<p>SVG Use The Platform</p>
+		<!--Pinker Kasten-->
+		<svg viewBox="0 0 214 250" width="600px" height="100%" >
+			<!--Gruppierung der SVG-Elemente-->
+			<g>
+				<!--Pinker Kasten-->
+				<rect x="0" y="0" width="107" height="125" fill="rgb(203,121,141)" />
+				<!--Use-->
+				<text x="10" y="30">Use</text>
+				<!--Unterstrich von Use-->
+				<line x1="10" y1="37" x2="95" y2="37" style="stroke:white;stroke-width:1.5;"/>
+				<!--The-->
+				<text x="10" y="65">The</text>
+				<!--Unterstrich von The-->
+				<line x1="10" y1="72" x2="95" y2="72" style="stroke:white;stroke-width:1.5;"/>
+				<!--Platform-->
+				<text x="10" y="100">Platform</text>
+				<!--Unterstrich von Platform-->
+				<line x1="10" y1="107" x2="95" y2="107" style="stroke:white;stroke-width:1.5;"/>
+			</g>
+		</svg>
+	</body>
+</html>

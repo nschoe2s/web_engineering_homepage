@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml6.2</title>
+	</head>
+	<body>
+		<p></p>    
+		<script>
+			/* Erstellen Sie auf Ihrem Server www2.inf.h-brs.de (oder localhost) zwei Text-Dateien A.txt und B.txt mit ungefähr gleich vielen Zeilen. */
+			/* Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server. */
+			/* Geben Sie auf einer Webseite den Inhalt beider Dateien zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll. */ 
+			/* Die beiden Dateien sollen also zeilenweise konkateniert werden. */ 
+			/* Erzielen Sie max. Geschwindigkeit durch paralleles Laden. */
+			/* Verwenden Sie dabei ausschließlich async / await. */
+			const konkateniert = document.querySelector('p');
+			function fetchTexts() {
+				return Promise.all([ // Mit der fetch-API beide Text-Dateien vom Server laden
+					fetch('A.txt').then(inhalt => inhalt.text()), //Inhalt der Datei A.txt
+					fetch('B.txt').then(inhalt => inhalt.text()) //Inhalt der Datei B.txt
+				]);
+			}
+			function inhaltsplitten(beideDateien) { //Inhalt beider Dateien aufsplitten
+				return new Promise((resolve, reject) => {
+					let a = beideDateien[0].toString().split('\n'); //Inhalt der Datei A.txt aufsplitten
+					let b = beideDateien[1].toString().split('\n'); //Inhalt der Datei B.txt aufsplitten
+					resolve([a,b]);
+				});
+			}        
+			function konkatenieren(inhaltAundB) {  //miteinander konkatenieren
+				return new Promise((resolve, reject) => {
+					let endergebnis ="";
+					if(inhaltAundB[0].length === inhaltAundB[1].length) {// Wenn A.txt und B.txt gleich viele Zeilen haben
+						for(var i = 0; i<inhaltAundB[0].length; ++i){// Schleife bis zur letzten Zeile von A.txt
+							endergebnis = endergebnis.concat(inhaltAundB[0][i], '<br>', inhaltAundB[1][i], '<br>');//Zeilen von A.txt und B.txt abwechselnd in endergebnis abspeichern
+						}
+					}
+					if(inhaltAundB[0].length < inhaltAundB[1].length) {// Wenn A.txt weniger Zeilen hat als B.txt
+						for(var i = 0; i<inhaltAundB[0].length; ++i){ // Schleife bis zur letzten Zeile von A.txt
+							endergebnis = endergebnis.concat(inhaltAundB[0][i], '<br>', inhaltAundB[1][i], '<br>');//Zeilen von A.txt und B.txt abwechselnd in endergebnis abspeichern
+						}
+						for(var i = inhaltAundB[0].length; i<inhaltAundB[1].length; ++i){// Schleife ab der letzten Zeile von A.txt bis zur letzten Zeile von B.txt
+							endergebnis = endergebnis.concat(inhaltAundB[1][i], '<br>');// Die restlichen Zeilen von B.txt in endergebnis abspeichern
+						}
+					}
+					if(inhaltAundB[0].length > inhaltAundB[1].length) {// Wenn A.txt mehr Zeilen hat als B.txt
+						for(var i = 0; i<inhaltAundB[1].length; ++i){ // Schleife bis zur letzten Zeile von B.txt
+							endergebnis = endergebnis.concat(inhaltAundB[0][i], '<br>', inhaltAundB[1][i], '<br>');//Zeilen von A.txt und B.txt abwechselnd in endergebnis abspeichern
+						}
+						for(var i = inhaltAundB[1].length; i<inhaltAundB[0].length; ++i){// Schleife ab der letzten Zeile von B.txt bis zur letzten Zeile von A.txt
+							endergebnis = endergebnis.concat(inhaltAundB[0][i], '<br>');// Die restlichen Zeilen von A.txt in endergebnis abspeichern
+						}
+					}
+					resolve(endergebnis); // Ergebnis bestimmen
+				});
+			}        
+			async function asyncKonkatenieren() {
+				const beideDateien = await fetchTexts(); // Mit der fetch-API beide Text-Dateien vom Server laden
+				const gesplittet = await inhaltsplitten(beideDateien);//Inhalt beider Dateien aufsplitten
+				const endergebnis = await konkatenieren(gesplittet); //miteinander konkatenieren
+				console.log(endergebnis); //Endergebnis ausgeben
+				konkateniert.innerHTML = endergebnis;//Endergebnis in HTML anzeigen
+			}
+			asyncKonkatenieren();
+		</script>
+	</body>
+</html>
