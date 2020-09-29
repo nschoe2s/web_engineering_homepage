@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>&Uuml10.1</title>	
+		<!-- Schreiben Sie eine Vue.js-Komponente mit 2 Buttons zum Inkrementieren und Dekrementieren eines Counters. -->
+		<!-- Angezeigt werden soll nicht nur der aktuelle Stand des Counters, sondern auch, wie oft geklickt wurde. -->
+		<!-- Betten Sie Ihre Counter-Komponente in die Webseite zweimal ein und testen Sie, ob beide Counter unabhängig voneinander sind.-->		
+	</head>
+	<body>	
+	<!-- Vue-Instanz=Template+State+Logic -->
+	
+		<!--1. Template-->
+		<div id="vuejsCounter">
+			<!-- 1. Einbettung des Counters -->
+			<counter></counter>
+			<!-- 2. Einbettung des Counters -->
+			<counter></counter>
+		</div>
+		<!-- 2. State-->
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script>
+			Vue.component('counter', {
+				template: '<div><h1>Counter: {{count}}</h1><a>Es wurde {{inkrementieren}} mal inkrementiert und {{dekrementieren}} mal dekrementiert.</a><br>Insgesamt wurde {{klicks}} mal geklickt<br><br><button @click="increment">Inkrementieren</button><button @click="decrement">Dekrementieren</button></div>',
+				data: function(){
+					return {
+						count:0,
+						inkrementieren:0,
+						dekrementieren:0,
+						klicks:0
+					}
+				},				
+		<!-- 3. Logic -->
+				methods: {
+					increment: function(){ 
+						this.count++; 
+						this.inkrementieren++; 
+						this.klicks++;
+					},
+					decrement: function(){ 
+						this.count--; 
+						this.dekrementieren++; 						
+						this.klicks++;
+					}
+				}
+			});
+			new Vue({
+				el: '#vuejsCounter'
+			});
+		</script>				
+	</body>
+</html>
