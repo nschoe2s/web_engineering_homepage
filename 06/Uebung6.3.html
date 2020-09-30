@@ -2,13 +2,13 @@
 <html lang="de">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" inhalt="width=device-width, initial-scale=1.0">
 		<title>&Uuml6.3</title>
 		<!-- Schreiben Sie einen Navigator für die Fachbegriffe des WWW zu den Oberthemen HTML, CSS und JavaScript. Im Hauptmenü sollen diese 3 Oberthemen zur Auswahl stehen. Im Untermenü soll eine zugehörige Liste von Fachbegriffen zum jeweiligen ausgewählten Oberthema stehen. In der Mitte soll eine Dokumentation zum ausgewählten Fachbegriff erscheinen mit Hyperlinks zu den anderen Fachbegriffen. Wird auf einen solchen Hyperlink geklickt, so sollen sich auch die beiden Menüs anpassen. Mit einem Button soll ein Zurücksprung möglich sein.-->
 		<!-- Schreiben Sie in HTML und CSS nur den Rahmen für einen solchen WWW-Navigator. Dabei können Sie auch ein schöneres Layout selbst erstellen. Die Inhalte sollen in einer JSON-Datei extern gelagert werden. Mit der fetch-API soll die JSON-Datei asynchron nicht-blockierend geladen werden. Sobald die Inhalte angekommen sind, sollen sie im Browser auch angezeigt werden.-->
 		<!-- Fügen Sie in die JSON-Datei Inhalte zu einigen Themen als Strings beispielhaft ein. Wenn Sie Inhalte aus fremden Quellen kopieren, so schreiben Sie bitte stets die Quelle als externe Ressource hinzu. Diese soll dann auf der rechten Seite im WWW-Navigator erscheinen. -->
 		<style>
-			<!---->
+			/* Allgemein */
 			* {
 				font-family: trebuchet ms;
 				box-sizing: border-box;
@@ -18,25 +18,25 @@
 				display: flex;
 				flex-wrap: wrap;
 			}
-			<!--Header oben-->
+			/* Header oben */
 			#header {
 				background-color: rgb(180,86,83);
 				width: 100%;
 			}
-			<!--Menüleiste links-->
+			/* Menüleiste links */
 			#menüleiste {
 				background-color: rgb(185,133,132);
 				width: 20%;
 				height: 80vh;
 			}
-			<!--Inhalt mittig-->
+			/* Inhalt mittig */
 			#inhalt {
 				background-color: rgb(162,208,240);
 				width: 60%;
 				height: 80vh;
 				overflow: auto;
 			}
-			<!--Quellen rechts-->
+			/* Quellen rechts */
 			#links {
 				background-color: rgb(185,133,132);
 				width: 20%;
@@ -46,7 +46,7 @@
 			h1 {
 				text-align:center;
 				color:white;
-				font-size:50px;
+				font-size:40px;
 			}
 			button{
 				background-color:rgb(107,112,156);
@@ -75,7 +75,7 @@
 					<button id="javascript" onclick="ladeSeite('javascript')">JavaScript</button>
 				</div>
 			</div>
-			<!--Menüleiste linka->
+			<!--Menüleiste links-->
 			<div id="menüleiste"></div>
 			<!--Content mittig -->
 			<div id="inhalt"></div>
