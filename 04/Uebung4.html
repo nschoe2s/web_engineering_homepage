@@ -3,23 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Web Engineering</title>
-		<link rel="stylesheet" href="../layout.css">		
+		<link rel="stylesheet" href="../layout.css">
 	</head>
 	<body>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<a id="back-to-top"></a>
 		<!-- Kopfzeile -->
 		<div id="header">
-			<table width="100%">
-				<col style="width:20%">
-				<col style="width:60%">
-				<col style="width:20%">
-				<tr>
-					<th id="links"></th>
-					<th id="mitte"><a><b>Web Engineering</b></a></th>
-					<th></th>
-					</tr>
-			</table>
+					<h1><b>Web Engineering</b></h1>
 		</div>
 		<!-- Menüleiste -->
 		<div id="menüleiste">
@@ -150,17 +139,16 @@
 				</li>
 			</ul>
 		</div>
-		
-		<!-- Content -->		
-		<table id="contenttabelle">
+		<!-- Content -->
+		<table>
 		<tr>
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">	
+		<div id="content">
 		<!-- Einführung in das Thema -->
 			<h2><b>4. JavaScript</b></h2>
-				<div id="uebung">				
+				<div id="uebung">
 				<a>Lingua franca des Webs</a>
 				</div>
 				<div id="unteruebung">
@@ -176,7 +164,7 @@
 				<li> <a>JavaScript-Programme selbst erstellen k&oumlnnen.</a></li>
 				</ol>
 				</div>
-				<a><b>Literatur, Tutorials und Kurse:</b></a>				
+				<a><b>Literatur, Tutorials und Kurse:</b></a>
 				<div id="antwort">
 				<ul>
 					<li>
@@ -198,14 +186,14 @@
 						<li><a class="href" href="http://crockford.com/javascript/">Survey</a></li>
 						<li><a class="href" href="http://crockford.com/javascript/">JavaScript Compiler Construction</a></li>
 						</ul>
-					</li>					
+					</li>
 					<li>
 						<a>Dr. Axel Rauschmayer</a>
 						<ul>
 						<li><a class="href" href="https://2ality.com/">2ality.com</a></li>
 						<li><a class="href" href="https://exploringjs.com/">exploringjs.com</a></li>
 						</ul>
-					</li>					
+					</li>
 					<li>
 						<a>Addy Osmani: Learning JavaScript Design Patterns</a>
 						<ul>
@@ -214,7 +202,7 @@
 					</li>
 				</ul>
 				</div>
-				<a><b>Mögliche Klausuraufgaben:</b></a>	
+				<a><b>Mögliche Klausuraufgaben:</b></a>
 				<ul>
 					<li><a>Über welche Art der Typisierung verfügt die Programmiersprache JavaScript?</a></li>
 					<li><a>Was ist der Datentyp des typeof-Operators?</a></li>
@@ -238,11 +226,10 @@
 			</div>
 			<br>
 			<!-- Übung 4.1 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="4.1">4.1 Funktionen in JavaScript (5 Punkte)</span></b></a>
 			</div>
-
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Schreiben Sie eine Funktion <mark> identity_function()</mark>, die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.</b></a>
 					<div id="antwort">
 						<a>function identify_function(x) {<br>
@@ -250,7 +237,7 @@
 						&emsp;&emsp;return x;<br>
 						&emsp;};<br>
 						}</a>
-					</div>				
+					</div>
 					<a><b>Schreiben Sie eine Addier-Funktion <mark>addf()</mark>, so dass <mark>addf(x)(y)</mark> genau <mark>x + y</mark> zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. <mark>addf(x)</mark> liefert eine Funktion, die auf <mark>y</mark> angewandt wird.)</b></a>
 					<div id="antwort">
 						<a>function addf(x) {<br>
@@ -263,7 +250,7 @@
 					<div id="antwort">
 						<a>function applyf(f) {<br>
 						&emsp;return function(x) {<br>
-						&emsp;&emsp;return function(y);<br>						
+						&emsp;&emsp;return function(y);<br>
 						&emsp;&emsp;&emsp;return f(x,y);<br>
 						&emsp;&emsp;};<br>
 						&emsp;};<br>
@@ -280,7 +267,7 @@
 					<a><b>Erzeugen Sie die <mark>inc</mark>-Funktion mit Hilfe einer der Funktionen <mark>addf, applyf</mark> und <mark>curry</mark> aus den letzten Aufgaben, ohne die Funktion <mark>inc()</mark> selbst zu implementieren. (<mark>inc(x)</mark> soll immer <mark>x + 1</mark> ergeben und lässt sich natürlich auch direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten der <mark>inc()</mark>-Implementierung zu schreiben?</b></a>
 					<div id="antwort">
 						<a>Erzeugung der inc-Funktion mit Hilfe der Funktion addf:<br>
-						function inc(x) {<br>						
+						function inc(x) {<br>
 						&emsp;return addf(x)(1);<br>
 						}<br>
 						Erzeugung der inc-Funktion mit Hilfe der Funktion applyf:<br>
@@ -293,7 +280,7 @@
 						}</a>
 					</div>
 					<a><b>Schreiben Sie eine Funktion <mark> methodize()</mark> , die eine binäre Funktion (z.B. add, mul) in eine unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.</b></a>
-					<div id="antwort">					
+					<div id="antwort">
 						<a>function methodize(f) {<br>
 						&emsp;return function(x) {<br>
 						&emsp;&emsp;return f(this,x);<br>
@@ -392,14 +379,14 @@
 						&emsp;&emsp;};<br>
 						&emsp;};<br>
 						}</a>
-					</div>					
+					</div>
 				</div>
 			<br>
 			<!-- Übung 4.2 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="4.2">4.2 JavaScript-Objekte (5 Punkte)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Schreiben Sie eine JavaScript-Fabrikfunktion für Warteschlangen (FIFO-Prinzip). Fabrikfunktionen erzeugen Objekte. Privatisieren Sie so viel wie möglich. Schreiben Sie Tests für Ihre Implementierung.</b></a>
 					<div id="antwort">
 						<a>function queueFactory() {<br>
@@ -413,7 +400,7 @@
 						&emsp;&emsp;};<br>
 						&emsp;};<br>
 						}</a>
-					</div>				
+					</div>
 					<a><b>Schreiben Sie eine JavaScript-Fabrikfunktion für ungeordnete Mengen. In ungeordneten Mengen tritt kein Element mehrfach auf. Privatisieren Sie so viel wie möglich. Schreiben Sie Tests für Ihre Implementierung.</b></a>
 					<div id="antwort">
 						<a>function ungeordneteMengen() {<br>
@@ -480,7 +467,7 @@
 					</div>
 				</div>
 			<br>
-		</div>			
+		</div>
 		</td>
 		<td WIDTH="20%">
 		</td>
@@ -488,6 +475,8 @@
 		</table>
 		<!-- Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden Code von folgender Internetseite:-->
 		<!-- https://blog.kulturbanause.de/2012/04/back-to-top-button-mit-jquery/ -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<a id="back-to-top"></a>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){

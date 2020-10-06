@@ -3,23 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Web Engineering</title>
-		<link rel="stylesheet" href="../layout.css">		
+		<link rel="stylesheet" href="../layout.css">
 	</head>
 	<body>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<a id="back-to-top"></a>
 		<!-- Kopfzeile -->
 		<div id="header">
-			<table width="100%">
-				<col style="width:20%">
-				<col style="width:60%">
-				<col style="width:20%">
-				<tr>
-					<th id="links"></th>
-					<th id="mitte"><a><b>Web Engineering</b></a></th>
-					<th></th>
-					</tr>
-			</table>
+					<h1><b>Web Engineering</b></h1>
 		</div>
 		<!-- Menüleiste -->
 		<div id="menüleiste">
@@ -150,17 +139,16 @@
 				</li>
 			</ul>
 		</div>
-		
-		<!-- Content -->		
-		<table id="contenttabelle">
+		<!-- Content -->
+		<table>
 		<tr>
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">	
+		<div id="content">
 		<!-- Einführung in das Thema -->
 			<h2><b>6. Asynchrones JavaScript</b></h2>
-				<div id="uebung">				
+				<div id="uebung">
 				<a>Ajax, Promise, async/await, Events, Worker</a>
 				</div>
 				<div id="unteruebung">
@@ -181,7 +169,7 @@
 				<li><a> Nebenläufige Worker programmieren können.</a></li>
 				</ol>
 				</div>
-				<a><b>Literatur:</b></a>				
+				<a><b>Literatur:</b></a>
 				<div id="antwort">
 				<ul>
 					<li><a class="href" href="https://dev.to/macmacky/70-javascript-interview-questions-5gfi">70 JavaScript Interview Questions</a></li>
@@ -195,31 +183,30 @@
 					<li><a class="href" href="https://de.wikipedia.org/wiki/Ajax_(Programmierung)">AJAX</a></li>
 				</ul>
 				</div>
-				<a><b>Mögliche Klausuraufgaben:</b></a>	
-				<ul>					
-					<li><a>Übersetzen Sie die setTimeout-Funktion in die Promise-Schreibweise.</a></li>					
-					<li><a>Übersetzen Sie die Promise-Schreibweise in async / await.</a></li>					
+				<a><b>Mögliche Klausuraufgaben:</b></a>
+				<ul>
+					<li><a>Übersetzen Sie die setTimeout-Funktion in die Promise-Schreibweise.</a></li>
+					<li><a>Übersetzen Sie die Promise-Schreibweise in async / await.</a></li>
 					<li><a>Wie können Sie mit der fetch-API zwei Dateien 'A.json' und 'B.json' parallel vom Server laden und deren Inhalte auf der Konsole ausgeben? Geben Sie 2 Lösungen an, (a) Promise-Syntax (b) async / await.</a></li>
 				</ul>
 				<br>
 			</div>
-			<br>			
+			<br>
 			<!-- Übung 6.0 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="6.0">6.0 W3Schools-Tutorial durcharbeiten</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Arbeiten Sie das </a><a class="href" href="https://www.w3schools.com/js/js_ajax_intro.asp">W3Schools-Tutorial zu AJAX</a><a> durch. Nutzen Sie das dort eingebaute <font color="#a4c8a5">"Try it Yourself"</font> für eigene Experimente.</b></a>
-								
-				<br>	
-				<br>
+					<br>
+					<br>
 				</div>
 			<br>
 			<!-- Übung 6.1 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="6.1">6.1 Promises (2 Punkte)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Erstellen Sie auf Ihrem Server www2.inf.h-brs.de (oder localhost) zwei Text-Dateien A.txt und B.txt mit ungefähr gleich vielen Zeilen. Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server. Geben Sie auf einer Webseite den Inhalt beider Dateien zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll. Die beiden Dateien sollen also zeilenweise konkateniert werden. Erzielen Sie max. Geschwindigkeit durch paralleles Laden. Verwenden Sie dabei ausschließlich die Promise API ohne async / await.</b></a>
 					<div id="antwort">
 						<a>Meine Lösung finden Sie</a>
@@ -230,14 +217,14 @@
 						<a>und </a>
 						<a class="href" href="B.txt">B.txt</a>
 						<a>.</a><br>
-					</div>	
+					</div>
 				</div>
 			<br>
 			<!-- Übung 6.2 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="6.2">6.2 async / await (1 Punkt)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Lösen Sie die letzte Aufgabe mit async / await statt Promise.</b></a>
 					<div id="antwort">
 						<a>Meine Lösung finden Sie</a>
@@ -245,23 +232,22 @@
 						<a>.</a>
 						<br>
 						<a>Mit "Rechtsklick -&gt Seitenquelltext anzeigen" können Sie Sich meinen HTML-Quellcode anzeigen lassen. </a>
-					</div>	
+					</div>
 				</div>
-			<br>			
+			<br>
 			<!-- Übung 6.3 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="6.3">6.3 WWW-Navigator (7 Punkte)</span></b></a>
 			</div>
-
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Schreiben Sie einen Navigator für die Fachbegriffe des WWW zu den Oberthemen HTML, CSS und JavaScript. Im Hauptmenü sollen diese 3 Oberthemen zur Auswahl stehen. Im Untermenü soll eine zugehörige Liste von Fachbegriffen zum jeweiligen ausgewählten Oberthema stehen. In der Mitte soll eine Dokumentation zum ausgewählten Fachbegriff erscheinen mit Hyperlinks zu den anderen Fachbegriffen. Wird auf einen solchen Hyperlink geklickt, so sollen sich auch die beiden Menüs anpassen. Mit einem Button soll ein Zurücksprung möglich sein.</b></a>
 					<br>
 					<a><b>Schreiben Sie in HTML und CSS nur den Rahmen für einen solchen WWW-Navigator. Dabei können Sie auch ein schöneres Layout selbst erstellen. Die Inhalte sollen in einer JSON-Datei extern gelagert werden. Mit der fetch-API soll die JSON-Datei asynchron nicht-blockierend geladen werden. Sobald die Inhalte angekommen sind, sollen sie im Browser auch angezeigt werden.</b></a>
 					<br>
 					<a><b>Fügen Sie in die JSON-Datei Inhalte zu einigen Themen als Strings beispielhaft ein. Wenn Sie Inhalte aus fremden Quellen kopieren, so schreiben Sie bitte stets die Quelle als externe Ressource hinzu. Diese soll dann auf der rechten Seite im WWW-Navigator erscheinen.</b></a>
 					<br>
-					<br>			
-					<img src="a6.3.1.jpg"height="180" alt="image-a6.3.1">			
+					<br>
+					<img src="a6.3.1.jpg"height="180" alt="image-a6.3.1">
 					<img src="a6.3.2.jpg"height="180" alt="image-a6.3.2">
 					<br>
 					<div id="antwort">
@@ -270,9 +256,9 @@
 						<a>.</a>
 						<br>
 						<a>Mit "Rechtsklick -&gt Seitenquelltext anzeigen" können Sie Sich meinen HTML-Quellcode anzeigen lassen. </a>
-					</div>	
+					</div>
 				</div>
-			<br>	
+			<br>
 		</div>
 		</td>
 		<td WIDTH="20%">
@@ -281,6 +267,8 @@
 		</table>
 		<!-- Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden Code von folgender Internetseite:-->
 		<!-- https://blog.kulturbanause.de/2012/04/back-to-top-button-mit-jquery/ -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<a id="back-to-top"></a>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){

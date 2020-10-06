@@ -1,62 +1,60 @@
 /* Gesamtseite */
 body {
 	background-color:#222;
-	font-family: Arial, Helvetica, sans-serif;	
+	font-family: Arial, Helvetica, sans-serif;
 	font-size:15px;
 	margin:0;
 }
-	::selection {
+::selection {
 	background-color:#222;
 	color:#fff;
 }
-			
-/* Kopfzeile unterteilt in drei Bereiche*/ 
-#header{	
+
+/* Kopfzeile unterteilt in drei Bereiche*/
+#header{
 	background-color: #222;
-}	
-#mitte{					
+}
+h1{
 	justify-content: center;
 	display:flex;
 	align-items:center;
 	margin-top:30px;
 	margin-bottom:30px;
-}
-#mitte a{
-	color:rgb(164,200,165);
+	color:rgb(185,195,185);
 	font-size: 500%;
 	font-weight:bold;
 	text-decoration:none;
 }
-			
+
 /* Menüleiste mit Dropdown-Menü */
 #menüleiste a {
 	display:block;
-	padding:0 10px; 
+	padding:0 10px;
 	color: #222;
 	font-size:15px;
 	line-height: 50px;
 	text-decoration:none;
 }
-#menüleiste a:hover { 
-	background-color: rgb(164,200,165);
+#menüleiste a:hover {
+	background-color: rgb(185,195,185);
 	line-width: 5px;
 }
 #menüleiste ul {
-	z-index:1;	
+	z-index:1;
 	padding: 0;
 	margin: 0;
 	list-style: none;
 	position: relative;
-	background-color:white;				
+	background-color:white;
 	display: flex;
-	flex-wrap: wrap;				
+	flex-wrap: wrap;
 	justify-content: space-around;
-} 
+}
 #menüleiste ul ul {
 	display: none;
-	position: absolute; 
-	top: 50px; 
-}   
+	position: absolute;
+	top: 50px;
+}
 #menüleiste ul li {
 	display:inline-block;
 	background-color: white;
@@ -75,15 +73,15 @@ body {
 #content {
 	z-index:3;
 	display: flex;
-	flex-wrap: wrap;				
+	flex-wrap: wrap;
 	justify-content: space-around;
 	display:inline-block;
 	text-align: left;
-}			
+}
 #content a{
 	color:black;
 }
-h2{					
+h2{
 	color:black;
 	font-size:30px;
 	background-color:white;
@@ -92,10 +90,10 @@ h2{
 	padding-right:20px;
 	padding-top:10px;
 	margin-bottom:0;
-	background-color:rgb(164,200,165);
-}			
+	background-color:rgb(185,195,185);
+}
 #uebungsueberschrift{
-	background-color:rgb(164,200,165);
+	background-color:rgb(185,195,185);
 	padding-bottom: 10px;
 	padding-left:20px;
 	padding-right:20px;
@@ -107,25 +105,25 @@ h2{
 	padding-left:20px;
 	padding-right:20px;
 	padding-top:20px;
-}			
+}
 #unteruebung{
 	background-color: white;
 	padding-left:40px;
 	padding-right:40px;
 	padding-top:20px;
-}			
-#antwort{	
-	background-color:white;	
+}
+#antwort{
+	background-color:white;
 	padding-top:5px;
 	padding-bottom:20px;
-}			
+}
 #content ol{
 	margin: 0;
 	padding-top:5px;
 	padding-bottom:5px;
 	padding-left:20px;
 	padding-right:20px;
-}	
+}
 #content ul{
 	margin: 0;
 	padding-top:5px;
@@ -138,24 +136,24 @@ h2{
 }
 #CodeReviewInnen{
 	padding:5px;
-	background-color: rgb(164,200,165);
+	background-color: rgb(185,195,185);
 }
 #ReviewAntwort{
 	padding:5px;
-	border: 3px solid rgb(164,200,165);
+	border: 3px solid rgb(185,195,185);
 }
 mark{
-	background-color:rgb(164,200,165,0.5);
+	background-color:rgb(185,195,185,0.5);
 }
-		
+
 /* Nach-Obej-Scroll-Button */
-/* Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden CSS Code von folgender Internetseite:*/	
+/* Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden CSS Code von folgender Internetseite:*/
 /* https://www.templatemonster.com/blog/de/wie-erstelle-ich-einen-nach-oben-button-mit-css-und-jquery/#:~:text=Ein%22Nach%20oben%22%2DButton,zur%C3%BCck%20zum%20Anfang%20der%20Seite.*/
 /* Zusätzlich habe ich die Hintergrundfarbe angepasst*/
 .back-to-top {
 	text-decoration:none;
 	display: inline-block;
-	background-color: rgb(164,200,165);
+	background-color: rgb(185,195,185);
 	width: 50px;
 	height: 50px;
 	text-align: center;
@@ -166,7 +164,7 @@ mark{
 	right: 30px;
 	transition: background-color .3s;
 	z-index: 1000;
-	}				
+	}
 .back-to-top:hover {
 	cursor: pointer;
 	background-color: #333;
@@ -183,10 +181,10 @@ mark{
 	line-height: 50px;
 	color: #fff;
 }
-/* Hier endet der kopierte Code */			
-			
+/* Hier endet der kopierte Code */
+
 /* Anderer Radio-Style */
-/* https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons */ 
+/* https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons */
 input[type='radio']:after {
 	width: 13px;
 	height: 13px;
@@ -194,7 +192,7 @@ input[type='radio']:after {
 	top: -2px;
 	left: -1px;
 	position: relative;
-	background-color: #a4c8a5;
+	background-color: rgb(185,195,185);
 	content: '';
 	display: inline-block;
 	visibility: visible;

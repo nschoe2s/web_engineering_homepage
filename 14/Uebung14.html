@@ -6,20 +6,9 @@
 		<link rel="stylesheet" href="../layout.css">
 	</head>
 	<body>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<a id="back-to-top"></a>
 		<!-- Kopfzeile -->
 		<div id="header">
-			<table width="100%">
-				<col style="width:20%">
-				<col style="width:60%">
-				<col style="width:20%">
-				<tr>
-					<th id="links"></th>
-					<th id="mitte"><a><b>Web Engineering</b></a></th>
-					<th></th>
-					</tr>
-			</table>
+					<h1><b>Web Engineering</b></h1>
 		</div>
 		<!-- Menüleiste -->
 		<div id="menüleiste">
@@ -150,17 +139,16 @@
 				</li>
 			</ul>
 		</div>
-		
-		<!-- Content -->		
-		<table id="contenttabelle">
+		<!-- Content -->
+		<table>
 		<tr>
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">	
+		<div id="content">
 		<!-- Einführung in das Thema -->
 			<h2><b>14. Web App Security</b></h2>
-				<div id="uebung">				
+				<div id="uebung">
 				<a>Open Web Application Security Project (OWASP)</a>
 				</div>
 				<div id="unteruebung">
@@ -186,7 +174,7 @@
 				<li> <a>JSON Web Token (JWT) anwenden können.</a></li>
 				</ol>
 				</div>
-				<a><b>Literatur, Tutorials und Videos:</b></a>				
+				<a><b>Literatur, Tutorials und Videos:</b></a>
 				<div id="antwort">
 				<ul>
 					<li>
@@ -210,7 +198,7 @@
 							<li><a>Valentin Wüstholz, Oswaldo Olivo, Marijn J. H. Heule, and Isil Dillig: </a><a class="href" href="https://www.cs.utexas.edu/~isil/redos.pdf">Static Detection of DoS Vulnerabilities in Programs that use Regular Expressions</a><a>, The University of Texas at Austin.</a></li>
 							<li><a class="href" href="https://stackoverflow.com/questions/12841970/how-can-i-recognize-an-evil-regex">How canhttp://www.dict.cc/ I recognize an evil regex?</a></li>
 						</ul>
-					</li>	
+					</li>
 					<li>
 						<a><b>OpenID, OAuth und JSON Web Token</b></a>
 						<ul>
@@ -224,39 +212,39 @@
 							<li><a class="href" href="https://tools.ietf.org/html/rfc7519">tools.ietf.org/html/rfc7519</a></li>
 							<li><a class="href" href="https://github.com/joellord/auth0-vue-udemy">github.com/joellord/auth0-vue-udemy</a></li>
 						</ul>
-					</li>	
+					</li>
 				</ul>
 				</div>
-				<a><b>Mögliche Klausuraufgaben:</b></a>	
-				<ul>		
-					<li><a>Was ist das positive Sicherheitsmodell und warum wird es bevorzugt?</a></li>						
-					<li><a>Nennen Sie die OWASP Top 10 Sicherheitsprobleme für WebApps.</a></li>						
-					<li><a>Was sind die wichtigsten Web App Security Risks? Beschreiben Sie die OWASP Top 3 und geben Sie je ein PHP-Beispiel.</a></li>						
-					<li><a>Was sind die General Security Guidelines? Nennen Sie für jeden Punkt ein Beispiel.</a></li>						
-					<li><a>Schreiben Sie in PHP eine WebApp, die für XSS-Angriffe anfällig ist. Definieren Sie den Angriffsvektor. Geben Sie einen konkreten Exploit an. Erweitern Sie Ihre PHP-WebApp um einen XSS-Schutz.</a></li>						
-					<li><a>Sicherer Array Wrapper</a></li>											
-					<li><a>Beschreiben Sie die window.opener - Sicherheitslücke und geben Sie ein Beispiel.</a></li>										
-					<li><a>Beschreiben Sie die Content Security Policy (CSP) und geben Sie ein Beispiel.</a></li>										
-					<li><a>Beschreiben Sie Subresource Integrity (SRI) und geben Sie ein Beispiel.</a></li>										
-					<li><a>Beschreiben Sie JSON Web Token (JWT) und geben Sie ein Beispiel.</a></li>										
+				<a><b>Mögliche Klausuraufgaben:</b></a>
+				<ul>
+					<li><a>Was ist das positive Sicherheitsmodell und warum wird es bevorzugt?</a></li>
+					<li><a>Nennen Sie die OWASP Top 10 Sicherheitsprobleme für WebApps.</a></li>
+					<li><a>Was sind die wichtigsten Web App Security Risks? Beschreiben Sie die OWASP Top 3 und geben Sie je ein PHP-Beispiel.</a></li>
+					<li><a>Was sind die General Security Guidelines? Nennen Sie für jeden Punkt ein Beispiel.</a></li>
+					<li><a>Schreiben Sie in PHP eine WebApp, die für XSS-Angriffe anfällig ist. Definieren Sie den Angriffsvektor. Geben Sie einen konkreten Exploit an. Erweitern Sie Ihre PHP-WebApp um einen XSS-Schutz.</a></li>
+					<li><a>Sicherer Array Wrapper</a></li>
+					<li><a>Beschreiben Sie die window.opener - Sicherheitslücke und geben Sie ein Beispiel.</a></li>
+					<li><a>Beschreiben Sie die Content Security Policy (CSP) und geben Sie ein Beispiel.</a></li>
+					<li><a>Beschreiben Sie Subresource Integrity (SRI) und geben Sie ein Beispiel.</a></li>
+					<li><a>Beschreiben Sie JSON Web Token (JWT) und geben Sie ein Beispiel.</a></li>
 				</ul>
 				<br>
 			</div>
-			<br>			
+			<br>
 			<!-- Übung 14.0 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="14.0">14.0 Security-Tutorial</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Lesen Sie in dem Buch </a><a class="href" href="https://link.springer.com/book/10.1007/978-3-658-20145-6">Sicherheit von Webanwendungen in der Praxis</a><a> den Abschnitt 2.7.3 über XSS auf den Seiten 77 bis 86.</b></a>
 					<br><br>
 				</div>
 			<br>
 			<!-- Übung 14.1 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="14.1">14.1 XSS (2 Punkte)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Lesen Sie in dem Buch </a><a class="href" href="https://link.springer.com/book/10.1007/978-3-658-20145-6">Sicherheit von Webanwendungen in der Praxis</a><a> den Abschnitt 2.7.3 über XSS auf den Seiten 77 bis 86. <br>Schreiben Sie in PHP eine Web App, die für XSS-Angriffe anfällig ist.<br>Definieren Sie den Angriffsvektor. <br>Geben Sie einen konkreten Exploit an.<br>Erweitern Sie Ihre PHP-WebApp um einen XSS-Schutz.</b></a>
 					<div id="antwort">
 						<a>Für diese Übungsaufgabe habe ich keine zufriedenstellende Lösung herausgearbeitet.</a>
@@ -264,42 +252,43 @@
 				</div>
 			<br>
 			<!-- Übung 14.2 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="14.2">14.2 Sicherer Array Wrapper (2 Punkte)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Implementieren Sie eine Funktion zur Berechnung eines sicheren "Array Wrapper"-Objekts mit den Methoden get, set und append, so dass ein Angreifer keinen Zugriff auf das innere, private Array hat. <br>Wie in der Vorlesung besprochen, ist folgender JavaScript-Code unsicher:<br>Die Angriffsmöglichkeiten wurden in der Vorlesung besprochen. Wie kann man den Code sicher machen?</b></a>
 					<br>
-					<br>			
+					<br>
 					<img src="a14.2.jpg"width="200" alt="image-a14.2">
 					<div id="antwort">
 						<a>Für diese Übungsaufgabe habe ich keine zufriedenstellende Lösung herausgearbeitet.</a>
 					</div>
 				</div>
-			<br>	
+			<br>
 			<!-- Übung 14.3 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="14.3">14.3 Sicherheitslücken finden (2 Punkte)</span></b></a>
 			</div>
 			<div id="uebung">
-			<a>Öffnen Sie die Webseite </a><a class="href" href="http://express-todo-example.dreamerslab.com/">Todo Example</a><a>, in der Sie Ihre ToDo-Liste verwalten können. Versuchen Sie so viele Sicherheitslücken wie möglich zu finden.</a>
+				<a>Öffnen Sie die Webseite </a><a class="href" href="http://express-todo-example.dreamerslab.com/">Todo Example</a><a>, in der Sie Ihre ToDo-Liste verwalten können. Versuchen Sie so viele Sicherheitslücken wie möglich zu finden.</a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Geben Sie hier die gefundenen Sicherheitslücken ein. Beschreiben Sie zu jeder Sicherheitslücke den Angriffsvektor, den Typ der Sicherheitslücke und wie man diesen hätte vermeiden können.</b></a>
 					<div id="antwort">
 						<a>Für diese Übungsaufgabe habe ich keine zufriedenstellende Lösung herausgearbeitet.</a>
 					</div>
 				</div>
-			<br>	
+			<br>
 			<!-- Übung 14.4 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="14.4">14.4 Klausurfragen als Quiz (2 Punkte)</span></b></a>
 			</div>
 			<div id="uebung">
-			<a>Wiederholen Sie den Stoff der Vorlesung "Einführung in Web Engineering", indem Sie folgendes Quiz durcharbeiten:</a>
+				<a>Wiederholen Sie den Stoff der Vorlesung "Einführung in Web Engineering", indem Sie folgendes Quiz durcharbeiten:</a>
 			</div>
-				<div id="unteruebung">	
-					<a><b>Question 1/12: Was ist mit der Orthogonalität des Webs gemeint und was hat dies für positive Auswirkungen auf das Web?</b></a>
+				<div id="unteruebung">
+					<a><b>Question 1/12: Was ist mit der Orthogonalität des Webs gemeint und was hat dies für </a>
+					<a>positive Auswirkungen auf das Web?</b></a>
 					<div id="antwort">
 						<table>
 							<tr>
@@ -315,7 +304,11 @@
 									<input type="radio" name="radio1" checked>
 								</td>
 								<td>
-									<a>Mit Orthogonalität des Webs ist die Unabhängigkeit der einzelnen Komponenten gemeint. Sprich Html CSS usw sind nicht voneinander abhängig. Sie werden separat entwickelt und können deshalb agiler funktionieren. Es erlaubt weiterhin eine Modularität die ein Ökosystem fördert in der jeder Pakete erstellen und auf open Source ebene verbessern kann.</a>
+									<a>Mit Orthogonalität des Webs ist die Unabhängigkeit der einzelnen Komponenten gemeint. </a>
+									<a>Sprich Html CSS usw sind nicht voneinander abhängig. </a>
+									<a>Sie werden separat entwickelt und können deshalb agiler funktionieren. </a>
+									<a>Es erlaubt weiterhin eine Modularität die ein Ökosystem fördert in der jeder Pakete </a>
+									<a>erstellen und auf open Source ebene verbessern kann.</a>
 								</td>
 							</tr>
 							<tr>
@@ -327,7 +320,7 @@
 								</td>
 							</tr>
 						</table>
-					</div>				
+					</div>
 					<a><b>Question 2/12: Mit welchem, die CSS-Regeln umschließenden Kontext, implementieren Sie ein responsives Webdesign sowohl für Desktop als auch mobile Geräte und welche beiden Ansätze gibt es dabei?</b></a>
 					<div id="antwort">
 						<table>
@@ -746,8 +739,8 @@
 						</table>
 					</div>
 				</div>
-			<br>		
-		</div>			
+			<br>
+		</div>
 		</td>
 		<td WIDTH="20%">
 		</td>
@@ -755,6 +748,8 @@
 		</table>
 		<!-- Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden Code von folgender Internetseite:-->
 		<!-- https://blog.kulturbanause.de/2012/04/back-to-top-button-mit-jquery/ -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<a id="back-to-top"></a>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){

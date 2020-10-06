@@ -3,23 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Web Engineering</title>
-		<link rel="stylesheet" href="../layout.css">		
+		<link rel="stylesheet" href="../layout.css">
 	</head>
 	<body>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<a id="back-to-top"></a>
 		<!-- Kopfzeile -->
 		<div id="header">
-			<table width="100%">
-				<col style="width:20%">
-				<col style="width:60%">
-				<col style="width:20%">
-				<tr>
-					<th id="links"></th>
-					<th id="mitte"><a><b>Web Engineering</b></a></th>
-					<th></th>
-					</tr>
-			</table>
+					<h1><b>Web Engineering</b></h1>
 		</div>
 		<!-- Menüleiste -->
 		<div id="menüleiste">
@@ -150,17 +139,16 @@
 				</li>
 			</ul>
 		</div>
-		
-		<!-- Content -->		
-		<table id="contenttabelle">
+		<!-- Content -->
+		<table>
 		<tr>
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">	
+		<div id="content">
 		<!-- Einführung in das Thema -->
 			<h2><b>5. Document Object Model (DOM)</b></h2>
-				<div id="uebung">				
+				<div id="uebung">
 				<a>HTML-Elemente und CSS-Stile mit JavaScript lesen und steuern</a>
 				</div>
 				<div id="unteruebung">
@@ -179,7 +167,7 @@
 				<li> <a>Unterschiede zwischen innerHTML, innerText, textContent und outerHTML erklären können.</a></li>
 				</ol>
 				</div>
-				<a><b>Literatur, Tutorials und Kurse:</b></a>				
+				<a><b>Literatur, Tutorials und Kurse:</b></a>
 				<div id="antwort">
 				<ul>
 					<li><a>w3schools.com </a><a class="href" href="https://www.w3schools.com/js/js_htmldom.asp">JavaScript HTML DOM</a></li>
@@ -187,8 +175,8 @@
 					<li><a>MDN web docs </a><a class="href" href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API">The HTML DOM API</a></li>
 				</ul>
 				</div>
-				<a><b>Mögliche Klausuraufgaben:</b></a>	
-				<ul>					
+				<a><b>Mögliche Klausuraufgaben:</b></a>
+				<ul>
 					<li>
 						<a>
 						Ergänzen Sie folgende HTML-Seite so, dass die Anzeige der Anzahl der Klicks auf den Button dynamisch aktualisiert wird, ohne den vorgegebenen HTML-Code zu verändern: Sie dürfen lediglich JavaScript hinzufügen. Dabei soll die Anzeige der Anzahl in der gleichen Zeile erfolgen wie der Text " Anzahl Klicks = ".
@@ -209,29 +197,28 @@
 					</ul>
 				<br>
 			</div>
-			<br>			
+			<br>
 			<!-- Übung 5.0 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="5.0">5.0 W3Schools-Tutorial durcharbeiten</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Arbeiten Sie das </a><a class="href" href="https://www.w3schools.com/js/js_htmldom.asp">W3Schools-Tutorial zu DOM API</a><a> durch. Nutzen Sie das dort eingebaute <font color="#a4c8a5">"Try it Yourself"</font> für eigene Experimente.</b></a>
-					
-				<br>	
+				<br>
 				<br>
 				</div>
 			<br>
 			<!-- Übung 5.1 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="5.1">5.1 Einkaufsliste (2 Punkte)</span></b></a>
 			</div>
 			<div id="uebung">
 				<a>Implementieren Sie die interaktive Anwendung "Einkaufsliste" selbstständig in JavaScript durch Nutzung der <a class="href" href="https://www.w3schools.com/js/js_htmldom.asp">DOM API</a><a>. Jeder Punkt auf der Einkaufsliste soll sich indiviiduell löschen lassen.</a>
 				<br>
-				<br>			
+				<br>
 				<img src="a5.1.jpg"width="200" alt="image-a5.1">
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Suchen Sie eine möglichst kurze und elegante Lösung.</b></a>
 					<div id="antwort">
 						<a>Meine Lösung finden Sie</a>
@@ -239,20 +226,20 @@
 						<a>.</a>
 						<br>
 						<a>Mit "Rechtsklick -&gt Seitenquelltext anzeigen" können Sie Sich meinen HTML-Quellcode anzeigen lassen. </a>
-					</div>	
+					</div>
 				</div>
 			<br>
 			<!-- Übung 5.2 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="5.2">5.2 Rednerliste mit Zeitmessung (5 Punkte)</span></b></a>
 			</div>
 			<div id="uebung">
 				<a>Implementieren Sie die interaktive Anwendung "Rednerliste mit Zeitmessung" selbstständig in JavaScript durch Nutzung der </a><a class="href" href="https://www.w3schools.com/js/js_htmldom.asp">DOM API</a><a> und der </a><a class="href" href="https://www.w3schools.com/js/js_timing.asp">Timer-Funktionen</a><a>. Neue Redner sollen auf Knopfdruck hinzugefügt werden können. Deren Uhr wird dann sofort automatisch gestartet und alle anderen Uhren angehalten. Bei jedem Redner soll die individuelle, gemessene Redezeit sekundengenau angezeigt werden. Für jeden Redner soll es einen eigenen Start-/Stopp-Button geben. Es soll immer nur eine Uhr laufen. Angezeigt werden sollen die bisherigen Summenzeiten aller Redebeiträge der betreffenden Person.</a>
 				<br>
-				<br>			
+				<br>
 				<img src="a5.2.jpg"width="200" alt="image-a5.2">
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Suchen Sie eine möglichst kurze und elegante Lösung.</b></a>
 					<div id="antwort">
 						<a>Meine Lösung finden Sie</a>
@@ -262,15 +249,15 @@
 						<a>Mit "Rechtsklick -&gt Seitenquelltext anzeigen" können Sie Sich meinen HTML-Quellcode anzeigen lassen. </a>
 					</div>
 				</div>
-			<br>			
+			<br>
 			<!-- Übung 5.3 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="5.3">5.3 Performanzmessungen (3 Punkte)</span></b></a>
 			</div>
 			<div id="uebung">
 				<a>Implementieren Sie Performanzmessungen zum Vergleich von <font color="#a4c8a5">innerHTML, innerText, textContent und outerHTML</font> selbstständig in JavaScript durch Nutzung der </a><a class="href" href="https://www.w3schools.com/js/js_htmldom.asp">DOM API</a><a>. Geben Sie die Messergebnisse als Tabelle aus. Verwenden Sie die eingebauten Zeitmess-Funktionen </a><a class="href" href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/now">Date.now</a><a> oder </a><a class="href" href="https://developers.google.com/web/updates/2012/08/When-milliseconds-are-not-enough-performance-now">performance.now</a><a>. Suchen Sie eine möglichst kurze und elegante Lösung.</a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Suchen Sie eine möglichst kurze und elegante Lösung.</b></a>
 					<div id="antwort">
 						<a>Meine Lösung finden Sie</a>
@@ -278,10 +265,10 @@
 						<a>.</a>
 						<br>
 						<a>Mit "Rechtsklick -&gt Seitenquelltext anzeigen" können Sie Sich meinen HTML-Quellcode anzeigen lassen. </a>
-					</div>	
+					</div>
 				</div>
-			<br>	
-		</div>			
+			<br>
+		</div>
 		</td>
 		<td WIDTH="20%">
 		</td>
@@ -289,6 +276,8 @@
 		</table>
 		<!-- Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden Code von folgender Internetseite:-->
 		<!-- https://blog.kulturbanause.de/2012/04/back-to-top-button-mit-jquery/ -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<a id="back-to-top"></a>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){

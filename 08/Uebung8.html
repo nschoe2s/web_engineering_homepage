@@ -6,20 +6,9 @@
 		<link rel="stylesheet" href="../layout.css">
 	</head>
 	<body>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<a id="back-to-top"></a>
 		<!-- Kopfzeile -->
 		<div id="header">
-			<table width="100%">
-				<col style="width:20%">
-				<col style="width:60%">
-				<col style="width:20%">
-				<tr>
-					<th id="links"></th>
-					<th id="mitte"><a><b>Web Engineering</b></a></th>
-					<th></th>
-					</tr>
-			</table>
+					<h1><b>Web Engineering</b></h1>
 		</div>
 		<!-- Menüleiste -->
 		<div id="menüleiste">
@@ -150,17 +139,16 @@
 				</li>
 			</ul>
 		</div>
-		
-		<!-- Content -->		
-		<table id="contenttabelle">
+		<!-- Content -->
+		<table>
 		<tr>
 		<td WIDTH="20%">
 		</td>
 		<td WIDTH="60%">
-		<div id="content">	
+		<div id="content">
 		<!-- Einführung in das Thema -->
 			<h2><b>8. SVG</b></h2>
-				<div id="uebung">				
+				<div id="uebung">
 				<a>SVG-Apps mit LitElement</a>
 				</div>
 				<div id="unteruebung">
@@ -180,7 +168,7 @@
 				<li> <a>SVG-Apps mit LitElement implementieren können.</a></li>
 				</ol>
 				</div>
-				<a><b>Literatur:</b></a>				
+				<a><b>Literatur:</b></a>
 				<div id="antwort">
 				<ul>
 					<li><a>Arbeiten Sie das </a><a class="href" href="https://www.w3schools.com/graphics/svg_intro.asp">W3Schools SVG Tutorial</a><a>durch.</a></li>
@@ -192,22 +180,22 @@
 					<li><a class="href" href="http://tutorials.jenkov.com/svg/index.html">Jenkov Aps Tutorial on SVG</a></li>
 					<li><a class="href" href="https://www.mediaevent.de/tutorial/svg.html">mediaevent on SVG</a></li>
 					<li><a class="href" href="https://www.tutorialspoint.com/svg/index.htm">tutorialspoint on SVG</a></li>
-					<li><a class="href" href="https://pomax.github.io/bezierinfo/">A Primer on Bézier Curves</a></li>					
+					<li><a class="href" href="https://pomax.github.io/bezierinfo/">A Primer on Bézier Curves</a></li>
 				</ul>
 				</div>
-				<a><b>Mögliche Klausuraufgaben:</b></a>	
-				<ul>					
-					<li><a>Nennen Sie die 7 wichtigsten SVG-Elemente und geben Sie je ein Beispiel.</a></li>					
-					<li><a>Wie kann man SVG in HTML einbinden? Welche Möglichkeiten sind mit den verschiedenen Einbindungen verbunden? Geben Sie eine Tabelle mit allen Einbindungen und Einschränkungen an und begründen Sie, warum der Standard welche Einschränkungen an welcher Stelle vorsieht.</a></li>					
+				<a><b>Mögliche Klausuraufgaben:</b></a>
+				<ul>
+					<li><a>Nennen Sie die 7 wichtigsten SVG-Elemente und geben Sie je ein Beispiel.</a></li>
+					<li><a>Wie kann man SVG in HTML einbinden? Welche Möglichkeiten sind mit den verschiedenen Einbindungen verbunden? Geben Sie eine Tabelle mit allen Einbindungen und Einschränkungen an und begründen Sie, warum der Standard welche Einschränkungen an welcher Stelle vorsieht.</a></li>
 				</ul>
 				<br>
 			</div>
-			<br>			
+			<br>
 			<!-- Übung 8.0 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="8.0">8.0 SVG- und Animations-Tutorials</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>
 					<ul>
 						<li><a>Arbeiten Sie das </a><a class="href" href="https://www.w3schools.com/graphics/svg_intro.asp">W3Schools</a><a> SVG Tutorial durch.</a></li>
@@ -220,17 +208,17 @@
 				</div>
 			<br>
 			<!-- Übung 8.1 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="8.1">8.1 SVG-Diagramm (1 Punkt)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Codieren Sie eine HTML-Datei mit Inline SVG, so dass sich folgendes Aussehen ergibt:</b></a>
 					<br>
-					<br>			
+					<br>
 					<img src="a8.1.jpg"width="200" alt="image-a8.1">
 					<br>
 					<a><b>Fügen Sie als Hover-Effekt eine CSS-Animation hinzu, die die Größe der SVG-Grafik verdoppelt, wenn man mit dem Cursor über die Grafik geht.</b></a>
-					
+
 					<div id="antwort">
 						<a>Meine Lösung finden Sie</a>
 						<a class="href" href="Uebung8.1.html">hier</a>
@@ -241,10 +229,10 @@
 				</div>
 			<br>
 			<!-- Übung 8.2 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="8.2">8.2 Statistik-Balkendiagramm in SVG (4 Punkte)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Implementieren Sie ein Balkendiagramm mit Inline SVG und </a><a class="href" href="https://lit-element.polymer-project.org/guide">LitElement</a><a>. Geben Sie die Daten für das Balkendiagramm im JSON-Format vor. Animieren Sie die Grafik wie z.B. in </a><a class="href" href="https://www.highcharts.com/demo/bar-basic">Bar Chart.</b></a>
 					<div id="antwort">
 						<a>Meine Lösung finden Sie</a>
@@ -254,12 +242,12 @@
 						<a>Mit "Rechtsklick -&gt Seitenquelltext anzeigen" können Sie Sich meinen HTML-Quellcode anzeigen lassen. </a>
 					</div>
 				</div>
-			<br>			
+			<br>
 			<!-- Übung 8.3 -->
-			<div id="uebungsueberschrift">	
+			<div id="uebungsueberschrift">
 				<a><b><span id="8.3">8.3 Bezier-Animation (5 Punkte)</span></b></a>
 			</div>
-				<div id="unteruebung">	
+				<div id="unteruebung">
 					<a><b>Schreiben Sie mit SVG und </a><a class="href" href="https://lit-element.polymer-project.org/guide">LitElement</a><a> ein Animationswerkzeug für Bezierkurven, wie unter </a><a class="href" href="https://pomax.github.io/bezierinfo/#introduction">§1 - A lightning introduction</a><a> vorgegeben.</b></a>
 					<div id="antwort">
 						<a>Für diese Übungsaufgabe habe ich keine zufriedenstellende Lösung herausgearbeitet.<br></a>
@@ -270,8 +258,8 @@
 						<a>Mit "Rechtsklick -&gt Seitenquelltext anzeigen" können Sie Sich meinen HTML-Quellcode anzeigen lassen. </a>
 					</div>
 				</div>
-			<br>		
-		</div>			
+			<br>
+		</div>
 		</td>
 		<td WIDTH="20%">
 		</td>
@@ -279,6 +267,8 @@
 		</table>
 		<!-- Um einen Nach-Oben-Scroll-Button einzufügen, habe ich den folgenden Code von folgender Internetseite:-->
 		<!-- https://blog.kulturbanause.de/2012/04/back-to-top-button-mit-jquery/ -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<a id="back-to-top"></a>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
